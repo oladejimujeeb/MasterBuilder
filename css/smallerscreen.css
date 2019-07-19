@@ -1,0 +1,68 @@
+@media screen and (max-width: 350px) {
+
+}
+@media screen and (max-width: 387px) {
+    .col-6 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+}
+@media screen and (max-width: 470px) {
+    
+}
+
+@media screen and (max-width: 575px) {
+    .ask-questions {
+        top: -10px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar-brand img {
+        height: 30px;
+    }
+    header h1 {
+        margin-left: 0;
+    }
+    .consult-div {
+        width: auto;
+    }
+    .footer {
+        width: 90%;
+    }
+    footer .text-right {
+        margin-top: 30px;
+    }
+    .btn.btn-documents {
+        font-size: 14px;
+    }
+    .navbar-dark .navbar-nav .nav-link,
+    .btn.btn-need {
+        font-size: 15px;
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .navbar form {
+        margin-left: 30px;
+        margin-top: 20px;
+    }
+}
+@media screen and (min-width: 950px) and (max-width: 1200px) {
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

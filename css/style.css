@@ -1,0 +1,173 @@
+body {
+    font-family: ;
+}
+.navbar {
+    margin-top: 25px;
+}
+.container-fluid {
+    width: 90%;
+    margin: auto;
+}
+.navbar-dark .navbar-nav .nav-link {
+    font-size: 20px;
+    line-height: 23px;
+    color: #000;
+    padding-left: 30px;
+}
+.navbar-dark .navbar-toggler {
+    color: rgba(255,255,255,.5);
+    border-color: rgba(0, 0, 0, 1);
+    background: black;
+}
+.navbar-dark .navbar-nav .active>.nav-link, 
+.navbar-dark .navbar-nav .nav-link.active, 
+.navbar-dark .navbar-nav .nav-link.show, 
+.navbar-dark .navbar-nav .show>.nav-link
+.navbar-dark .navbar-nav .nav-item.active,
+.navbar-dark .navbar-nav .nav-link:hover {
+    color: #000;
+    font-weight: bold;
+}
+.navbar form {
+    margin-top: 10px;
+}
+.btn-group {
+    height: 50px;
+}
+.btn.btn-documents {
+    background: #C4C4C4;
+    border-radius: 9px 0px 0px 9px;
+    border: none;
+    font-weight: 500;
+    font-size: 25px;
+    line-height: 29px;
+    padding-top: 0;
+}
+.search-input {
+    background: rgba(41, 222, 70, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.19);
+    height: 50px;
+    margin-left: -3px;
+    padding-top: 3px;
+}
+.btn.btn-primary.btn-search {
+    background: #5473C3;
+    border-radius: 0px 9px 9px 0px;
+    margin-left: -10px;
+}
+header h1 {
+    font-weight: 500;
+    font-size: 47px;
+    line-height: 55px;
+    color: rgba(0, 0, 0, 0.65);
+    margin-left: 95px;
+    margin-top: 50px;
+}
+.btn.btn-create {
+    background: #214AB1;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 19px;
+    line-height: 22px;
+    color: #fff!important;
+    padding: 15px 70px;
+    padding-top: 8px;
+    margin-top: 60px;
+}
+#permit-wrapper {
+    width: 70%;
+    margin: 90px auto 40px auto;
+}
+#permit-wrapper h6 {
+    font-size: 25px;
+    line-height: 29px;
+    color: #236A7A;
+    margin-top: 10px;
+}
+#permit-wrapper h6.building {
+    margin-top: 20px;
+}
+.btn.btn-need {
+    background: #FD4A57;
+    border-radius: 7px;
+    border: none;
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 27px;
+    color: #FFF!important;
+    margin-top: 70px;
+    padding: 15px 25px;
+    padding-top: 8px;
+}
+.consult-div {
+    width: 60%;
+    margin: 50px auto;
+    text-align: center;
+}
+#permit-wrapper p {
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: rgba(0, 0, 0, 0.65);
+    margin-bottom: 60px;
+}
+#permit-wrapper hr,
+footer hr {
+    border: 1px solid #000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+}
+.master-builder {
+    background: #214AB1;
+    padding: 20px 40px;
+}
+.master-builder p {
+    font-size: 18px;
+    color: #FFF;
+}
+.master-builder p span {
+    font-weight: bold;
+    font-size: 36px;  
+    line-height: 54px; 
+}
+footer {
+    padding-bottom: 80px;
+}
+.footer {
+    width: 50%;
+    margin: 80px auto 0 auto;
+}
+.mt-30 {
+    margin-top: 30px;
+}
+footer h5 {
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 26px;
+    color: rgba(0, 0, 0, 0.65);
+}
+footer p,
+footer p a {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: rgba(0, 0, 0, 0.65);
+}
+.linkedin {
+    margin-left: 8px;
+}
+footer h6 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    padding-top: 40px;
+}
+footer .text-right {
+    margin-top: 10px;
+}
+.ask-questions {
+    float: right;
+    position: relative;
+    top: -45px;
+}
