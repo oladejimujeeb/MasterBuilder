@@ -14,91 +14,69 @@
 </head>
 <body> 
     <header> 
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="img-fluid" alt="logo"></a>
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
-                <span class="navbar-toggler-icon"></span>
-              </button>
-
-              <div class="collapse navbar-collapse" id="navb">
-                <form class="ml-auto">
-                    <div class="btn-group">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle btn-documents" data-toggle="dropdown">Documents</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Tablet</a>
-                                <a class="dropdown-item" href="#">Smartphone</a>
+        <div class="signup-wrapper">
+            <div class="text-center">
+                <a href="index.html"><img src="images/signup-logo.png" class="img-fluid signup-logo" alt="Logo"></a>
+            </div>
+            <div class="signup-div">
+                <h5 class="text-center">create an account</h5>
+                <form>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>First Name</label>
+                                <input type="text" name="firstname" class="form-control">
                             </div>
                         </div>
-                        <input class="form-control mr-sm-2 search-input" type="text">
-                        <button type="button" class="btn btn-primary btn-search"><i class="fa fa-search"></i></button>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Last Name</label>
+                                <input type="text" name="lastname" class="form-control">
+                            </div>
+                        </div>
                     </div>
-                </form>
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="about.html">ABOUT US</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="faq.html">FAQ</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="signin.html">LOGIN</a>
-                  </li>
-                </ul>
-              </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="text" name="phonenumber" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Email</label>
+                                <input type="email" name="email" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Create Password</label>
+                                <input type="password" name="password" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-md-6 col-sm-6">
+                            <div class="form-group">
+                                <label>Confirm Password</label>
+                                <input type="password" name="confirmpassword" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="text-center">
+                        <button class="btn btn-submit">Create account</button>
+                    </div>
+                </form>            
             </div>
-        </nav>
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <div>
-                        <h1>The Better Way To Process And Secure My Building Permit.</h1>
-                    </div>
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <div>
-                        <img src="images/construction-engineer.png" class="img-fluid" alt="A construction engineer">
-                    </div>
-                </div>
+            <div>
+                <p>By creating an account, you agree to Master Builder’s <a href="">Conditions of Use</a> and <a href="">Privacy Notice</a></p>
+                <p style="padding-top: 0;">Already have an account? <a href="signin.html">Sign in</a></p>
             </div>
-        </div>
-        <div class="text-center">
-            <a class="btn btn-create" href="signup.html">Create account</a>
         </div>
     </header>
     <article>
         <section id="permit-wrapper">
             <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                        <div class="text-center">
-                            <img src="images/building-permit.png" class="img-fluid" alt="Building permit"><br>
-                            <h6 class="building">Building<br>Permit</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                        <div class="text-center">
-                            <img src="images/land-information.png" class="img-fluid" alt="Land Information">
-                            <h6>Land<br>Information</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                        <div class="text-center">
-                            <img src="images/governor-consent.png" class="img-fluid" alt="">
-                            <h6>Governor’s<br>Consent</h6>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
-                        <div class="text-center">
-                            <img src="images/occupancy.png" class="img-fluid" alt="">
-                            <h6 class="building">C of 0</h6>
-                        </div>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <a class="btn btn-need">Need an Architect/Engineer</a>
-                </div>
                 <div class="consult-div">
                     <p>Consult and Process your real estate documents with ease</p>
                     <hr>

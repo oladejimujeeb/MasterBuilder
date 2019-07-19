@@ -9,7 +9,7 @@ body {
     margin: auto;
 }
 .navbar-dark .navbar-nav .nav-link {
-    font-size: 20px;
+    font-size: 17px;
     line-height: 23px;
     color: #000;
     padding-left: 30px;
@@ -170,4 +170,63 @@ footer .text-right {
     float: right;
     position: relative;
     top: -45px;
+}
+
+/* Signup page */
+.signup-wrapper {
+    width: 40%;
+    margin: auto;
+    margin-bottom: -25px;
+}
+.signup-logo {
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
+.signup-div,
+.signup-div input {
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 7px;
+}
+.signup-div {
+    padding: 20px;
+}
+.signup-div h5 {
+    font-weight: 500;
+    font-size: 23px;
+    line-height: 27px;
+    color: #000;
+    margin-bottom: 40px;
+}
+.signup-div label {
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.65);
+}
+.signup-div button {
+    background: rgba(33, 74, 177, 0.77);
+    border-radius: 7px;
+    font-weight: bold;
+    font-size: 18px;
+    line-height: 21px;
+    color: #FFF;
+    padding: 10px 40px;
+    padding-top: 6px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.signup-wrapper p {
+    font-size: 18px;
+    line-height: 21px;
+    color: rgba(0, 0, 0, 0.65);
+    padding: 10px 0 0 20px;
+}
+.signup-wrapper p a {
+    color: #214AB1;
+}
+.signup-wrapper section {
+    width: 60%;
+    margin: auto;
+}
+.signup-wrapper section .btn-submit {
+    width: 100%;
 }
