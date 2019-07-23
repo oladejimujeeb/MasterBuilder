@@ -230,3 +230,18 @@ footer .text-right {
 .signup-wrapper section .btn-submit {
     width: 100%;
 }
+
+/* building permit page */
+.building-permit {
+    background: rgba(233, 16, 16, 0.53);
+    margin-top: 20px;
+}
+.select-city img {
+    margin-left: 50px;
+    margin-top: -70%;
+}
+.select-city .dropdown-menu {
+    background: #C4C4C4;
+    border: 1px solid #000000;
+    border-radius: 5px;
+}
