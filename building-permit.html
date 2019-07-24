@@ -26,6 +26,23 @@
             color: #fff;
             padding-bottom: 30px;
         }
+        .consult-div {
+            margin: -60px auto 0 auto;
+        }
+        .consult-div hr {
+            width: 70%;
+            margin: auto;
+            border: 1px solid rgba(0, 0, 0, 0.65);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        }
+        @media screen and (max-width: 768px) {
+            header h1 {
+                font-size: 25px;
+            }
+            header h2 {
+                font-size: 30px;
+            }
+        }
     </style>
 </head>
 <body> 
@@ -85,7 +102,7 @@
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <div>
-                            <img src="images/permit.png" class="img-fluid" alt="an image">
+                            <img src="images/permit.png" class="img-fluid permit" alt="an image">
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8">
@@ -111,81 +128,64 @@
                                 <a class="dropdown-item" href="#">-----ABUJA-----</a>
                               </div>
                             </div>                 
-                            <div id="menu_area" class="menu-area">
-                                <nav class="navbar navbar-light navbar-expand-lg mainmenu">
-                                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                                        <ul class="navbar-nav mr-auto">
-                                            <li class="dropdown">
-                                                <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                <li><a href="#">Action</a></li>
-                                                <li><a href="#">Another action</a></li>
-                                                <li><a href="#">Something else here</a></li>
-                                                <li class="dropdown">
-                                                    <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown2</a>
-                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                    <li><a href="#">Action</a></li>
-                                                    <li><a href="#">Another action</a></li>
-                                                    <li><a href="#">Something else here</a></li>
-                                                    <li class="dropdown">
-                                                        <a class="dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown3</a>
-                                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                            <li><a href="#">Action</a></li>
-                                                            <li><a href="#">Another action</a></li>
-                                                            <li><a href="#">Something else here</a></li>
-                                                        </ul>
-                                                    </li>
-                                                    </ul>
-                                                </li>
-                                                </ul>
-                                            </li>
-                                            <li><a href="#">Service</a></li>
-                                        </ul>
-                                    </div>
-                                </nav>
-                            </div>
                         </div>
+                        <a class="btn btn-apply" href="">APPLY FOR BUILDING PERMIT &emsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="text-center">
-            <a class="btn btn-create" href="signup.html">Create account</a>
+        <div class="consult-div">
+            <hr>
         </div>
-        <section id="permit-wrapper">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+        <div class="text-center">
+            <a class="btn btn-create btn-chart" href="signup.html"><img src="images/e.png" class="img-fluid" alt="icon">&nbsp;Create account &nbsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
+        </div>
+        <section class="howitworks">
+            <div class="container-fluid">
+                <h2>How it Works</h2>
+                <div class="d-flex">
+                    <div class="p-2 flex-fill">
                         <div class="text-center">
-                            <img src="images/building-permit.png" class="img-fluid" alt="Building permit"><br>
-                            <h6 class="building">Building<br>Permit</h6>
+                            <img src="images/echarting.png" class="img-fluid" alt="an icon"><br>
+                            <h6 class="building">Click on the e charting menu bar, enter full address of site to check</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="p-2 flex-fill">
                         <div class="text-center">
-                            <img src="images/land-information.png" class="img-fluid" alt="Land Information">
-                            <h6>Land<br>Information</h6>
+                            <img src="images/gps.png" class="img-fluid" alt="an icon">
+                            <h6>Enter northern and eastern co-ordinates from the survey plan</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="p-2 flex-fill">
                         <div class="text-center">
-                            <img src="images/governor-consent.png" class="img-fluid" alt="">
-                            <h6>Governor’s<br>Consent</h6>
+                            <img src="images/plan.png" class="img-fluid" alt="an icon">
+                            <h6>upload a clear picture of your survey plan</h6>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                    <div class="p-2 flex-fill">
                         <div class="text-center">
-                            <img src="images/occupancy.png" class="img-fluid" alt="">
-                            <h6 class="building">C of 0</h6>
+                            <img src="images/email.png" class="img-fluid" alt="an icon">
+                            <h6 class="building">Enter your e-mail in the space provided</h6>
+                        </div>
+                    </div>
+                    <div class="p-2 flex-fill">
+                        <div class="text-center">
+                            <img src="images/time.png" class="img-fluid" alt="an icon">
+                            <h6 class="building">you’ll be getting your charting report  sent to your mail within the hour</h6>
                         </div>
                     </div>
                 </div>
-                <div class="text-center">
-                    <a class="btn btn-need">Need an Architect/Engineer</a>
-                </div>
-                <div class="consult-div">
-                    <p>Consult and Process your real estate documents with ease</p>
-                    <hr>
+                <div class="online-planning">
+                    <div class="d-flex">
+                        <div class="p-2">
+                            <div>
+                                <p>kindly consult with our online planning consultant if you need help</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="images/consult.png" class="img-fluid" alt="an icon">
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -258,7 +258,7 @@
             }, 1200);
         });
     </script>
-    <script>
+    <!-- <script>
         (function($){
     $('.dropdown-menu a.dropdown-toggle').on('click', function(e) {
       if (!$(this).next().hasClass('show')) {
@@ -274,6 +274,6 @@
       return false;
     });
 })(jQuery)
-    </script>
+    </script> -->
 </body>
 </html>

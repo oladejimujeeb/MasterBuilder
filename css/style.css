@@ -111,7 +111,7 @@ header h1 {
     color: rgba(0, 0, 0, 0.65);
     margin-bottom: 60px;
 }
-#permit-wrapper hr,
+.consult-div hr,
 footer hr {
     border: 1px solid #000;
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
@@ -236,7 +236,7 @@ footer .text-right {
     background: rgba(233, 16, 16, 0.53);
     margin-top: 20px;
 }
-.select-city img {
+.select-city .permit {
     margin-left: 50px;
     margin-top: -70%;
 }
@@ -244,4 +244,66 @@ footer .text-right {
     background: #C4C4C4;
     border: 1px solid #000000;
     border-radius: 5px;
+}
+.btn.btn-apply {
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFF;
+    background: #FD4A57;
+    border-color: #FD4A57;
+    padding: 15px 40px;
+    padding-top: 10px;
+    margin-top: 40px;
+}
+.btn.btn-apply img {
+    height: 15px;
+    margin-top: -4px;
+}
+.btn.btn-create.btn-chart {
+    font-weight: 500;
+    font-size: 29px;
+    line-height: 34px;
+    color: #FFF;
+    padding: .375rem .75rem;
+    margin-bottom: 50px;
+}
+.howitworks {
+    width: 90%;
+    margin: auto;
+    padding: 40px 0;
+    margin-bottom: 30px;
+}
+.howitworks h2 {
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 47px;
+    color: rgba(0, 0, 0, 0.65);
+    text-align: center;
+    margin-bottom: 30px;
+}
+.howitworks h6 {
+    margin: auto;
+    font-weight: 500;
+    font-size: 19px;
+    line-height: 22px;
+    color: rgba(0, 0, 0, 0.65);
+}
+.howitworks img {
+    height: 130px;
+    margin-bottom: 20px;
+}
+.online-planning {
+    width: 70%;
+    margin: 40px auto 20px auto;
+}
+.howitworks .online-planning img {
+    height: auto;
+}
+.online-planning p {
+    font-style: normal;
+    font-weight: 500;
+    font-size: 30px;
+    line-height: 35px;
+    color: rgba(0, 0, 0, 0.65);
+    text-align: center;
 }

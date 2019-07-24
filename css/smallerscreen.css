@@ -24,7 +24,8 @@
     header h1 {
         margin-left: 0;
     }
-    .consult-div {
+    .consult-div,
+    .online-planning {
         width: auto;
     }
     .footer {
@@ -42,6 +43,13 @@
     }
     .signup-wrapper {
         width: 80%;
+    }
+    .select-city .permit {
+        margin-left: 20px;
+        margin-top: -15%;
+    }
+    .d-flex {
+        display: block!important;
     }
 }
 
