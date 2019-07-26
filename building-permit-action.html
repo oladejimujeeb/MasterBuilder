@@ -26,16 +26,16 @@
             color: #fff;
             padding-bottom: 30px;
         }
-        .consult-div {
-            margin: -60px auto 0 auto;
-        }
         .consult-div hr {
             width: 70%;
             margin: auto;
             border: 1px solid rgba(0, 0, 0, 0.65);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
         }
-
+        .btn.btn-apply {
+            background: #214AB1;
+            border-color: #214AB1;
+        }
         @media screen and (max-width: 768px) {
             header h1 {
                 font-size: 25px;
@@ -43,10 +43,6 @@
             header h2 {
                 font-size: 30px;
             }
-        }
-        #dropdownitem.dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
-                /*top: 90px!important;*/
-                left: 100%!important;
         }
     </style>
 </head>
@@ -87,116 +83,54 @@
               </div>
             </div>
         </nav>
-        <div class="building-permit">
+        <div class="action-wrapper">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4"></div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="text-center">
-                            <h1>SECURE YOUR BUILDING PERMIT WITH A CLICK</h1>
-                            <h2>Building a house is good, building a home in a house is better.</h2>
-                        </div>
+                <div>
+                    <h1>MATERIAL DOCUMENTS REQUIRED TO PROCESS BUILDING PERMIT </h1>
+                    <p>The following materials are required for the processing of building permits.</p>
+                    <p><span>It is important to have all the documents ready in other to get a permit.</span></p><br>
+                    <p>The requirements include the following;<br>
+                        - 5 sets of architectural drawings<br>
+                        - 5 sets of structural drawing (to include letter of supervision and calculation sheets).<br>
+                        - 5 sets of electrical drawings<br>
+                        - 5 sets of mechanical drawings<br><br>
+                    </p>
+                    <p>- Evidence of land ownership/title document, which could be:<br>
+                        &emsp;&emsp;* Stamped duty land purchase reciept;<br>
+                        &emsp;&emsp;* Letter of ratification; and;<br>
+                        &emsp;&emsp;* Certificate of occupancy (C of O)/Land certificate<br>
+                        &emsp;&emsp;* Governor’s consent<br>
+                        &emsp;&emsp;* 1 copy of sunprint survey plan; <br>
+                    </p>
+                    <p>- Current tax clearance certificate;<br>
+                        - Sworn affidavit in lieu of Tenement Rate;<br>
+                        - 2 copies of environmental technical analysis report to be prepared by a Registered Town Planner where applicable;<br>
+                        - Assessment fee and other government reciept(s);<br>
+                        - Police Report<br>
+                        - Fire Service report iin case of applications for Petrol/Gas Filling stations and high rise buildigs<br><br>
+                    </p>
+                    <p>- For Company and Corporate bodies;<br>
+                        &emsp;&emsp;* Company Tax Clearance (CTC)<br>
+                        &emsp;&emsp;* Two (2) Directors Tax Clearance;<br>
+                        &emsp;&emsp;* Evidence of PAYE returns; and<br>
+                        &emsp;&emsp;* Certificate of Incorporation.<br>
+                    </p>
+                </div>
+                <div>
+                    <p class="text-center"><span>*Ensure you have all required documents before proceeding<br> to applying for a building permit if not contact <a href="">support</a></span></p>
+                </div>
+                <div>
+                    <div class="text-center">
+                        <a class="btn btn-apply" href="">APPLY FOR BUILDING PERMIT &emsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
+                    </div>
+                    <div class="consult-div">
+                        <hr>
                     </div>
                 </div>
             </div>
         </div>
     </header>
     <article>
-        <div class="select-city">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div>
-                            <img src="images/permit.png" class="img-fluid permit" alt="an image">
-                        </div>
-                    </div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="dropdown-space">
-                            <div class="dropdown">
-                                <button type="button" id="select-city" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                  SELECT CITY
-                                </button>
-                                <div class="selectcity dropdown-menu">
-                                    <a class="dropdown-item" href="#"  data-toggle="dropdown">-----LAGOS-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">-----AGEGE-----&emsp;<i class="fa fa-angle-right"></i></a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item" href="#">----OYO----&emsp;<i class="fa fa-angle-right"></i></a>
-                                    <a class="dropdown-item" href="#" data-toggle="dropdown">-----ABUJA-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Link 1</a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <a class="btn btn-apply" href="">APPLY FOR BUILDING PERMIT &emsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="consult-div">
-            <hr>
-        </div>
-        <div class="text-center">
-            <a class="btn btn-create btn-chart" href="signup.html"><img src="images/e.png" class="img-fluid" alt="icon">&nbsp;charting &nbsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
-        </div>
-        <section id="howitworks">
-            <div class="howitworks">
-                <div class="container-fluid">
-                    <h2>How it Works</h2>
-                    <div class="d-flex">
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/echarting.png" class="img-fluid" alt="an icon"><br>
-                                <h6 class="building">Click on the e charting menu bar, enter full address of site to check</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/gps.png" class="img-fluid" alt="an icon">
-                                <h6>Enter northern and eastern co-ordinates from the survey plan</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/plan.png" class="img-fluid" alt="an icon">
-                                <h6>upload a clear picture of your survey plan</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/email.png" class="img-fluid" alt="an icon">
-                                <h6 class="building">Enter your e-mail in the space provided</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/time.png" class="img-fluid" alt="an icon">
-                                <h6 class="building">you’ll be getting your charting report  sent to your mail within the hour</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="online-planning">
-                        <div class="d-flex">
-                            <div class="p-2">
-                                <div>
-                                    <p>kindly consult with our online planning consultant if you need help</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img src="images/consult.png" class="img-fluid" alt="an icon">
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
         <section class="master-builder">
             <p><span>Master Builder</span> offers Building Plan Approval Processing, C of O, Building Designs, Architecture, Engineering Designs and Land Survey  documentation. It also offers Builders, Construction Engineers, Landlords and tenants in major Nigerian cities (Lagos, Abuja, Abeokuta, Ibadan etc.) a platform to meet and consult professionals in the construction industry who would deliver services in it’s various ethical approach/standard.</p>
             <p>Master BUilder  has a strong market position and a coherent strategy to not only ensure client satisfaction but also that design standards are maintained. It has established clear steps to achieve its aim which is to build a strong digitized process for town planning practice in Nigerian cities (Lagos, Abuja, Abeokuta, Ibadan etc.)</p>
@@ -247,6 +181,7 @@
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
     <script src="js/highlight.min.js"></script>
     <script src="js/aos.js"></script>
     <script>

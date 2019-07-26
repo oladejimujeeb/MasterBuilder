@@ -12,36 +12,54 @@
     <link href="css/smallerscreen.css" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css" />
     <style>
-        header h1 {
-            margin-top: 30px;
-            font-weight: 900;
-            font-size: 38px;
-            line-height: 45px;
-            color: #fff;
+        .building-permit {
+            background: url(images/background.png);
+            background-repeat: no-repeat;
+            background-size: cover;
         }
-        header h2 {
+        .building-permit button img {
+            margin-left: 0;
+            margin-top: -6px;
+        }
+        .building-permit button#chart {
+            margin-left: 100px;
+        }
+        .building-permit p {
+            margin-left: -40px;
+            width: 80%;
+        }
+        .building-permit .form-wrapper {
+            margin-left: 90px;
+        }
+        .btn.btn-create.btn-chart {
+            margin-top: 35px;
+        }
+        .building-permit h1 {
+            width: 90%;
+            margin: 30px 0;
+            color: #fff;
             font-weight: bold;
-            font-size: 41px;
-            line-height: 48px;
-            color: #fff;
-            padding-bottom: 30px;
+            font-size: 43px;
+            line-height: 64px;
         }
-        .consult-div {
-            margin: -60px auto 0 auto;
+        #select-city {
+            background: #C4C4C4;
+            border: #C4C4C4;
+            color: rgba(0, 0, 0, 0.65);
         }
-        .consult-div hr {
-            width: 70%;
-            margin: auto;
-            border: 1px solid rgba(0, 0, 0, 0.65);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-        }
-
         @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 25px;
-            }
-            header h2 {
+            .building-permit h1 {
                 font-size: 30px;
+                line-height: 40px;
+            }
+            .building-permit .form-wrapper,
+            .building-permit p {
+                margin-left: 0;
+            }
+        }
+        @media screen and (max-width: 990px) {
+            .building-permit button#chart {
+                margin-left: 0;
             }
         }
         #dropdownitem.dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
@@ -87,64 +105,72 @@
               </div>
             </div>
         </nav>
-        <div class="building-permit">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4"></div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="text-center">
-                            <h1>SECURE YOUR BUILDING PERMIT WITH A CLICK</h1>
-                            <h2>Building a house is good, building a home in a house is better.</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </header>
     <article>
-        <div class="select-city">
+        <section class="building-permit">
             <div class="container-fluid">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div>
-                            <img src="images/permit.png" class="img-fluid permit" alt="an image">
-                        </div>
+                    <div class="col-lg-3 col-md-4">
+                        <img src="images/echart.png" class="img-fluid" alt="">
                     </div>
                     <div class="col-lg-8 col-md-8">
-                        <div class="dropdown-space">
-                            <div class="dropdown">
-                                <button type="button" id="select-city" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                  SELECT CITY
-                                </button>
-                                <div class="selectcity dropdown-menu">
-                                    <a class="dropdown-item" href="#"  data-toggle="dropdown">-----LAGOS-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">-----AGEGE-----&emsp;<i class="fa fa-angle-right"></i></a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
+                        <div class="form-wrapper">
+                            <h1>e-charting will help you know the status of your land and permissible use.</h1>
+                            <div class="select-city">
+                                <div class="dropdown">
+                                    <button type="button" id="select-city" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                        SELECT CITY
+                                    </button>
+                                    <div class="selectcity dropdown-menu">
+                                        <a class="dropdown-item" href="#"  data-toggle="dropdown">-----LAGOS-----&emsp;<i class="fa fa-angle-right"></i>
+                                            <div id="dropdownitem" class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">-----AGEGE-----&emsp;<i class="fa fa-angle-right"></i></a>
+                                                <a class="dropdown-item" href="#">Link 2</a>
+                                            </div>
+                                        </a>
+                                        <a class="dropdown-item" href="#">----OYO----&emsp;<i class="fa fa-angle-right"></i></a>
+                                        <a class="dropdown-item" href="#" data-toggle="dropdown">-----ABUJA-----&emsp;<i class="fa fa-angle-right"></i>
+                                            <div id="dropdownitem" class="dropdown-menu">
+                                                <a class="dropdown-item" href="#">Link 1</a>
+                                                <a class="dropdown-item" href="#">Link 2</a>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <form>
+                                        <div class="form-group">
+                                            <label for="siteaddress">ENTER SITE’S FULL ADDERESS</label>
+                                            <input type="text" class="form-control" id="siteaddress" required>
                                         </div>
-                                    </a>
-                                    <a class="dropdown-item" href="#">----OYO----&emsp;<i class="fa fa-angle-right"></i></a>
-                                    <a class="dropdown-item" href="#" data-toggle="dropdown">-----ABUJA-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Link 1</a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
+                                        <div class="form-group">
+                                            <label for="eastern">ENTER EASTERN CO-ORDINATE</label>
+                                            <input type="text" class="form-control" id="eastern" required>
                                         </div>
-                                    </a>
+                                        <div class="form-group">
+                                            <label for="western">ENTER NORTHERN CO-ORDINATE</label>
+                                            <input type="text" class="form-control" id="western" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="surveyplan">UPLOAD SURVEY PLAN</label>
+                                            <input type="file" class="form-control" id="surveyplan" required>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="email">ENTER EMAIL</label>
+                                            <input type="email" class="form-control" id="email" required>
+                                        </div>
+
+                                        <p><span>*Ensure you have filled all required documents before charting, remember you can contact <a href="">support for help</a></span></p>
+
+                                        <div>
+                                            <button class="btn btn-create btn-chart" href="" id="chart"><span>C</span>hart &nbsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></button>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
-
-                            <a class="btn btn-apply" href="">APPLY FOR BUILDING PERMIT &emsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="consult-div">
-            <hr>
-        </div>
-        <div class="text-center">
-            <a class="btn btn-create btn-chart" href="signup.html"><img src="images/e.png" class="img-fluid" alt="icon">&nbsp;charting &nbsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
-        </div>
+        </section>
         <section id="howitworks">
             <div class="howitworks">
                 <div class="container-fluid">

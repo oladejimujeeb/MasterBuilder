@@ -51,6 +51,9 @@
     .d-flex {
         display: block!important;
     }
+    .howitworks h2 {
+        font-size: 35px;
+    }
 }
 
 @media screen and (max-width: 990px) {
@@ -58,9 +61,20 @@
         margin-left: 30px;
         margin-top: 20px;
     }
+    .building-permit input {
+        width: 80%;
+    }
+    .building-permit #surveyplan {
+        width: 45%;
+    }
+    .building-permit #email {
+        width: 65%;
+    }
 }
-@media screen and (min-width: 950px) and (max-width: 1200px) {
-
+@media screen and (min-width: 768px) and (max-width: 900px) {
+    .howitworks {
+        width: auto;
+    }
 }
 
 

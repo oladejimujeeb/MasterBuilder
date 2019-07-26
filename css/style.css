@@ -240,10 +240,31 @@ footer .text-right {
     margin-left: 50px;
     margin-top: -70%;
 }
-.select-city .dropdown-menu {
+.dropdown-space {
+    margin-top: 15px;
+    margin-left: -40px;
+}
+#select-city {
+    background: #214AB1;
+    border: #214AB1;
+    font-size: 20px;
+    line-height: 23px;
+    color: #FFF;
+    padding: 15px;
+    padding-top: 12px;
+}
+.selectcity.dropdown-menu {
     background: #C4C4C4;
     border: 1px solid #000000;
     border-radius: 5px;
+}
+.dropdown-item.active, .dropdown-item:active,
+.dropdown-item:focus, .dropdown-item:hover {
+    background: transparent;
+    color: #F33B3B;
+}
+.selectcity.dropdown-menu .dropdown-menu {
+    background: #C4C4C4;
 }
 .btn.btn-apply {
     font-size: 20px;
@@ -267,11 +288,17 @@ footer .text-right {
     padding: .375rem .75rem;
     margin-bottom: 50px;
 }
+#howitworks {
+    background: url(./../images/howitworks.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: bottom left;
+}
 .howitworks {
     width: 90%;
     margin: auto;
     padding: 40px 0;
-    margin-bottom: 30px;
+    margin-bottom: 60px;
 }
 .howitworks h2 {
     font-weight: 500;
@@ -298,6 +325,9 @@ footer .text-right {
 }
 .howitworks .online-planning img {
     height: auto;
+    margin-top: 20px;
+    position: relative;
+    left: -45px;
 }
 .online-planning p {
     font-style: normal;
@@ -306,4 +336,69 @@ footer .text-right {
     line-height: 35px;
     color: rgba(0, 0, 0, 0.65);
     text-align: center;
+}
+
+/* building permit action */
+.action-wrapper h1 {
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 23px;
+    text-decoration: underline;
+    color: rgba(0, 0, 0, 0.65);
+    transform: matrix(1, 0, 0, 1, 0, 0);
+}
+.action-wrapper p,
+.building-permit p {
+    margin-left: 95px;
+    font-size: 20px;
+    line-height: 23px;
+    color: #000000;
+}
+.action-wrapper p span,
+.building-permit p span {
+    color: #F33B3B;
+    display: block;
+    padding-top: 20px;
+}
+.action-wrapper p span a,
+.building-permit p span a {
+    color: #214AB1;
+}
+/* e charting page */
+.building-permit form {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+.building-permit label {
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 16px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+.building-permit input {
+    background: rgba(196, 196, 196, 0.3);
+    border: 1px solid #C4C4C4;
+    border-radius: 5px;
+    transform: rotate(0deg);
+    width: 50%;
+}
+.building-permit #surveyplan {
+    width: 15%;
+}
+.building-permit #email {
+    width: 35%;
+}
+.building-permit button span {
+    font-size: 43px; 
+}
+
+/* Land Information */
+#form-wrapper {
+    width: 40%;
+    margin: 30px auto;
+}
+#form-wrapper .form-wrap {
+    width: 80%;
+    margin: auto;
 }
