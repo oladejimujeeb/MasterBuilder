@@ -1,16 +1,9 @@
-@media screen and (max-width: 350px) {
-
-}
 @media screen and (max-width: 387px) {
     .col-6 {
         flex: 0 0 100%;
         max-width: 100%;
     }
 }
-@media screen and (max-width: 470px) {
-    
-}
-
 @media screen and (max-width: 575px) {
     .ask-questions {
         top: -10px;
@@ -28,7 +21,8 @@
     .online-planning {
         width: auto;
     }
-    .footer {
+    .footer,
+    #success-wrapper p {
         width: 90%;
     }
     footer .text-right {
@@ -70,10 +64,16 @@
     .building-permit #email {
         width: 65%;
     }
+    .howitworks .online-planning img {
+        left: 0;
+    }
 }
 @media screen and (min-width: 768px) and (max-width: 900px) {
     .howitworks {
         width: auto;
+    }
+    #success-wrapper p {
+        width: 70%;
     }
 }
 

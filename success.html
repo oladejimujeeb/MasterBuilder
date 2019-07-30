@@ -12,44 +12,85 @@
     <link href="css/smallerscreen.css" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        .consult-div hr {
+            width: 70%;
+            margin: auto;
+            border: 1px solid rgba(0, 0, 0, 0.65);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+        }
+        .howitworks {
+            padding: 0;
+        }
+    </style>
 </head>
 <body> 
     <header> 
-        <div class="signup-wrapper" data-aos="fade-down">
-            <div class="text-center">
-                <a href="index.html"><img src="images/signup-logo.png" class="img-fluid signup-logo" alt="Logo"></a>
-            </div>
-            <div class="signup-div">
-                <h5 class="text-center">Sign in</h5>
-                <section>
-                    <form>
-                        <div class="form-group">
-                            <label>Email</label>
-                            <input type="email" name="email" class="form-control">
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="index.html"><img src="images/logo.png" class="img-fluid" alt="logo"></a>
+              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+
+              <div class="collapse navbar-collapse" id="navb">
+                <form class="ml-auto">
+                    <div class="btn-group">
+                        <div class="btn-group">
+                            <button type="button" class="btn btn-primary dropdown-toggle btn-documents" data-toggle="dropdown">Documents</button>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="#">Tablet</a>
+                                <a class="dropdown-item" href="#">Smartphone</a>
+                            </div>
                         </div>
-                        <div class="form-group">
-                            <label>Password</label>
-                            <input type="password" name="password" class="form-control">
-                        </div>
-                        <div class="text-center">
-                            <button class="btn btn-submit">Sign in</button>
-                        </div>
-                    </form>  
-                </section>          
+                        <input class="form-control mr-sm-2 search-input" type="text">
+                        <button type="button" class="btn btn-primary btn-search"><i class="fa fa-search"></i></button>
+                    </div>
+                </form>
+                <ul class="navbar-nav ml-auto">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="faq.html">FAQ</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="signin.html">LOGIN</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-            <div>
-                <p>By creating an account, you agree to Master Builder’s <a href="">Conditions of Use</a> and <a href="">Privacy Notice</a></p>
-                <p style="padding-top: 0;">New to Master Builder? <a href="signup.html">Create and account</a></p>
-            </div>
-        </div>
+        </nav>
     </header>
     <article>
-        <section id="permit-wrapper" data-aos="fade-up">
-            <div class="container">
-                <div class="consult-div">
-                    <p>Consult and Process your land documents with ease</p>
-                    <hr>
+        <section id="success-wrapper" data-aos="fade-in-right">
+            <div class="text-center">
+                <img src="images/success.png" class="img-fluid" alt="">
+                <p>kindly check your email in the next 1 hr for your charting report</p>
+            </div>
+        </section>
+        <section data-aos="fade-up">
+            <div class="consult-div">
+                <hr>
+            </div>
+            <div class="howitworks">
+                <div class="container-fluid">
+                    <div class="online-planning" style="margin-bottom: -20px;">
+                        <div class="d-flex">
+                            <div class="p-2">
+                                <div>
+                                    <p>kindly consult with our online planning consultant if you need help</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="images/consult.png" class="img-fluid" alt="an icon">
+                            </div>
+                        </div>
+                    </div>
                 </div>
+            </div>
+            <div class="consult-div">
+                <hr>
             </div>
         </section>
 
