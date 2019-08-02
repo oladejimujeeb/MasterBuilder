@@ -1,7 +1,18 @@
 To run Minimal app:
 1. Install Python
-    To install python in Windows: Vist https://www.python.org/downloads/windows/ to download the
+    a. Download binaries for Windows: Vist https://www.python.org/downloads/windows/ to download the
     most recent releases. To avoid version issues, download 2.7 (It's what I used here).
+    For better experience, while installing change the installation path.
+	Create a Python folder in C drive and set the location to it.
+    b. Add environment variables for Python
+	i. Go to the installation folder of python
+	ii. There should be a folder called Python27 or Python36 (depends), copy it's url/path
+	iii. Right click START MENU, select SYSTEM -> ADVANCED SYSTEM SETTINGS ->
+	ENVIRONMENT VARIABLES -> (under system variables , select) PATH->
+	EDIT -> NEW -> PASTE COPIED PATH -> OK -> OK -> OK.
+	iv. Open cmd and run 'python', the cmd then works as a Python shell.
+
+
 2. Install Flask
     So it won't mess with your other projects, it's better to install Flask in a virtual env.
     a. Open the project directory in cmd (You can open it with vscode)
@@ -9,6 +20,7 @@ To run Minimal app:
             venv is the shortcode for virtual environment
             env is the venv name - you can change that to what you like
             {The installation might take a while}
+	    
     c. Activate the venv
         still in cmd, run: env\Scripts\activate
     d. Install Flask
