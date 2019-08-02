@@ -1,0 +1,81 @@
+To run Minimal app:
+1. Install Python
+    To install python in Windows: Vist https://www.python.org/downloads/windows/ to download the
+    most recent releases. To avoid version issues, download 2.7 (It's what I used here).
+2. Install Flask
+    So it won't mess with your other projects, it's better to install Flask in a virtual env.
+    a. Open the project directory in cmd (You can open it with vscode)
+    b. run on terminal "py -m venv env"
+            venv is the shortcode for virtual environment
+            env is the venv name - you can change that to what you like
+            {The installation might take a while}
+    c. Activate the venv
+        still in cmd, run: env\Scripts\activate
+    d. Install Flask
+        pip install flask    
+    e. Set app.py as the main app file
+        set FLASK_APP=app.py
+    f. RUN the app.
+        flask run
+
+To run all functionalities:
+#I exclude these codes (models.py, db.sql) to make things easier.
+Once the others are set up, I'll push them.
+3. Install SQLAlchemy
+    a. In the same directory, make sure the venv is activated, run
+        pip install sqlalchemy
+4. Install MySQL
+    Change the database settings in config.cfg to match the dbname,username&password at your end.
+    #The SQL dump is included to create the database
+    e.g 'mysql://root:demons@localhost/db_masterBuilder'
+    mysql - db type; root - my localhost username; demons - my localhost password; localhost - localhost; db_masterBuilder - database name
+
+CHANGES
+1. All css,images,fonts & bootstrap files moved to static folder.
+    To reference each, a '../static/' is added to the usual url.
+    e.g <img src='../static/images/arrow.png' alt=''>
+
+2. All html pages are moved to the template folder. 
+    To access each page, a route needs to be set in app.py.
+    NOTE: Each route name (i.e def routename) is unique.
+    The HTML page that needs to be accessed is place is returned with the render_template function.
+    render_template checks the templates folder by default.
+    e.g success page would be:
+        @app.route('/')
+        def success():
+            return render_template('success.html', ##, ###)
+    
+    ## and ### are optional. The stand for dynamic fields that is eing sent to the pages (e.g success or error messages)
+
+3. The templates folder has a 'layout.html' AND 'layout-auth,html' files
+    This files contain the overall templates. It includes what's common to all the other pages.
+    layout is for all pages excluding signup&signin pages. layout-auth is for the signup&in pages
+    {I would work on a general layout later, that all other layouts can extend from}
+    Since nav, footer are common to all pages - layout(-auth).html have all that in it.
+    The subsequent pages gets their info from the page.
+    (Check out the {%blocks%} in layout.html, and the {%extends%} in index,signin for more information.
+
+4. The templates folder has a includes subfolder.
+    This is done to reduce the lines of codes per page.
+    A section of the codes that is common to more than a page can be written in includes.
+    It is then referenced with an {%include%} block
+    Note that all includes start with an _
+    Note the _footer, _prefooter and co html pages.
+5. VERY IMPORTANT
+    .html is removed from all href
+    e.g a. href='sign.html' becomes href='signin' Or whatever route is used.
+        @app.route('/signin')
+        def signin():
+            return render_template('signin.html')
+        ANOTHER EXAMPLE FOR THE SAME PAGE IS: 
+        @app.route('/login')
+        def signin():
+            return render_template('signin.html')
+        href here would be 'href="/login" or simple href='login'
+        b. all routes leading to index.html would be simply href='/'
+
+
+
+INDEX, LANDINFO, SIGN IN & SIGN UP have been converted to the templates. {On updtaing each pages, let's edit this documents}
+
+THANK YOU.

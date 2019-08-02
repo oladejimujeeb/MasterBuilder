@@ -1,0 +1,30 @@
+{% extends 'layout-auth.html' %}
+{% block title %}
+<title> Master Builder - Sign In </title>
+{% endblock %}
+{% block body%}
+    <div class="signup-div">
+        <h5 class="text-center">Sign in</h5>
+        <section>
+            <form>
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" name="password" class="form-control">
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-submit">Sign in</button>
+                </div>
+            </form>  
+        </section>          
+    </div>
+    <div>
+        <p>By creating an account, you agree to Master Builder’s <a href="">Conditions of Use</a> and <a href="">Privacy Notice</a></p>
+        <p style="padding-top: 0;">New to Master Builder? <a href="signup">Create and account</a></p>
+    </div>
+
+{%endblock%}
+    

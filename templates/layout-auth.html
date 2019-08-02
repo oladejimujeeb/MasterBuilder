@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- LAYOUT FOR SIGN IN AND LOG IN -->
+    <!-- LATER, I WOULD CREATE A GENERAL LAYOUT, THAT BOTH PRESENT LAYOUTS WILL EXTEND FROM TO REDUCE THE LINES OF CODE ON EACH PAGE -->
+	<!-- page specific title -->
+    {% block title %}
+    {% endblock %}
+    <!-- general -->
+	<meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
+    <link href="../static/font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="../static/font-awesome-4.7.0/css/font-awesome-animation.min.css" rel="stylesheet"/>
+    <link href="../static/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../static/css/style.css" rel="stylesheet">
+    <link href="../static/css/smallerscreen.css" rel="stylesheet">
+    <link rel="stylesheet" href="../static/css/aos.css" />
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <!-- Just in case this would be used in the future: PAGE SPECIFIC STYLES -->
+    {% block stykes %}
+    {% endblock %}
+</head>
+<body> 
+    <header> 
+        <div class="signup-wrapper" data-aos="fade-down">
+            <div class="text-center">
+                <a href="/"><img src="../static/images/signup-logo.png" class="img-fluid signup-logo" alt="Logo"></a>
+            </div>
+            <!-- signin/up page content -->
+            {%block body%}
+            {%endblock%}
+        </div>
+    </header>
+    <!-- common to all layouts: use includes/_prefooter -->
+    {% include 'includes/_prefooter.html' %}
+
+    <!-- footer common to both layout: use includes/_footer -->
+    {% include 'includes/_footer.html' %}
+
+    <!-- scripts common to both layouts: use includes/_scripts -->
+    {% include 'includes/_scripts.html' %}
+</body>
+</html>
