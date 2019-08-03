@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title> Master Builder - Better way to secure your Building Permit </title>
+{% endblock %}
+{% block body %}
+     <div>
+        <div class="container-fluid">
+            <div class="row" data-aos="fade-right">
+                <div class="col-lg-6 col-md-6">
+                    <div>
+                        <h1>The Better Way To Process And Secure My Building Permit.</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div>
+                        <img src="../static/images/construction-engineer.png" class="img-fluid" alt="A construction engineer">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-create" href="signup" data-aos="fade-up">Create account</a>
+        </div>
+    </div>
+    <article>
+        <section id="permit-wrapper" data-aos="fade-up">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="building-permit"><div class="text-center">
+                            <img src="../static/images/building-permit.png" class="img-fluid" alt="Building permit"><br>
+                            <h6 class="building">Building<br>Permit</h6>
+                        </div></a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="land-info"><div class="text-center">
+                            <img src="../static/images/land-information.png" class="img-fluid" alt="Land Information">
+                            <h6>Land<br>Information</h6>
+                        </div></a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href=""><div class="text-center">
+                            <img src="../static/images/governor-consent.png" class="img-fluid" alt="">
+                            <h6>Governor’s<br>Consent</h6>
+                        </div></a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href=""><div class="text-center">
+                            <img src="../static/images/occupancy.png" class="img-fluid" alt="">
+                            <h6 class="building">C of 0</h6>
+                        </div></a>
+                    </div>
+                </div>
+                <div class="text-center">
+                    <a class="btn btn-need">Need an Architect/Engineer</a>
+                </div>
+            </div>
+        </section>
+    </article>
+{% endblock%}

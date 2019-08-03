@@ -1,0 +1,60 @@
+{% extends 'layout-auth.html' %}
+{% block title %}
+<title> Master Builder - Sign Up </title>
+{% endblock %}
+{% block body%}
+<div class="signup-div">
+    <h5 class="text-center">create an account</h5>
+    <form>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" name="firstname" class="form-control">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" name="lastname" class="form-control">
+                    </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Phone Number</label>
+                    <input type="text" name="phonenumber" class="form-control">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="email" name="email" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Create Password</label>
+                    <input type="password" name="password" class="form-control">
+                </div>
+            </div>
+            <div class="col-lg-6 col-md-6 col-sm-6">
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="confirmpassword" class="form-control">
+                </div>
+            </div>
+        </div>
+        <div class="text-center">
+            <button class="btn btn-submit">Create account</button>
+        </div>
+    </form>            
+</div>
+<div>
+    <p>By creating an account, you agree to Master Builder’s <a href="">Conditions of Use</a> and <a href="">Privacy Notice</a></p>
+    <p style="padding-top: 0;">Already have an account? <a href="signin">Sign in</a></p>
+</div>
+{%endblock%}

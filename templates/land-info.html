@@ -1,0 +1,129 @@
+{% extends 'layout.html' %}
+{% block title %}
+<title> Master Builder - Better way to secure your Building Permit </title>
+{% endblock %}
+
+{% block style %}
+{% include 'includes/_land-info-styles.html' %}
+{%endblock%}
+
+{% block body %}
+<!-- page specific banner -->
+    <article>
+        <section class="building-permit" data-aos="fade-down">
+            <div class="form-wrapper">
+                <div class="text-center">
+                    <h1>Land Information</h1>
+                    <h2>This would help you ascertain the use of your land in compliance with the State Operative Development Plans.</h2>
+                </div>
+                <div class="select-city">
+                    <div id="form-wrapper">
+                        <div class="form-wrap">
+                            <div class="dropdown">
+                                <button type="button" id="select-city" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                    SELECT CITY
+                                </button>
+                                <div class="selectcity dropdown-menu">
+                                    <a class="dropdown-item" href="#"  data-toggle="dropdown">-----LAGOS-----&emsp;<i class="fa fa-angle-right"></i>
+                                        <div id="dropdownitem" class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">-----AGEGE-----&emsp;<i class="fa fa-angle-right"></i></a>
+                                            <a class="dropdown-item" href="#">Link 2</a>
+                                        </div>
+                                    </a>
+                                    <a class="dropdown-item" href="#">----OYO----&emsp;<i class="fa fa-angle-right"></i></a>
+                                    <a class="dropdown-item" href="#" data-toggle="dropdown">-----ABUJA-----&emsp;<i class="fa fa-angle-right"></i>
+                                        <div id="dropdownitem" class="dropdown-menu">
+                                            <a class="dropdown-item" href="#">Link 1</a>
+                                            <a class="dropdown-item" href="#">Link 2</a>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <form>
+                            <div class="form-wrap">
+                                <div class="form-group">
+                                    <label for="siteaddress">ENTER SITE’S FULL ADDERESS</label>
+                                    <input type="text" class="form-control" id="siteaddress" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="eastern">ENTER EASTERN CO-ORDINATE</label>
+                                    <input type="text" class="form-control" id="eastern" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="western">ENTER NORTHERN CO-ORDINATE</label>
+                                    <input type="text" class="form-control" id="western" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="surveyplan">UPLOAD SURVEY PLAN</label>
+                                    <input type="file" class="form-control" id="surveyplan" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="email">ENTER EMAIL</label>
+                                    <input type="email" class="form-control" id="email" required>
+                                </div>
+                            </div>
+                            <div class="text-center">
+                                <p><span>*Ensure you have filled all required documents before charting, remember you can contact <a href="">support for help</a></span></p>
+                                <div>
+                                    <button class="btn btn-create btn-chart" href=""><span>E</span>nter &nbsp;<img src="../static/images/arrow.png" class="img-fluid" alt="icon"></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="howitworks" data-aos="fade-up">
+            <div class="howitworks">
+                <div class="container-fluid">
+                    <h2>How it Works</h2>
+                    <div class="d-flex">
+                        <div class="p-2 flex-fill">
+                            <div class="text-center">
+                                <img src="../static/images/echarting.png" class="img-fluid" alt="an icon"><br>
+                                <h6 class="building">Click on the e charting menu bar, enter full address of site to check</h6>
+                            </div>
+                        </div>
+                        <div class="p-2 flex-fill">
+                            <div class="text-center">
+                                <img src="../static/images/gps.png" class="img-fluid" alt="an icon">
+                                <h6>Enter northern and eastern co-ordinates from the survey plan</h6>
+                            </div>
+                        </div>
+                        <div class="p-2 flex-fill">
+                            <div class="text-center">
+                                <img src="../static/images/plan.png" class="img-fluid" alt="an icon">
+                                <h6>upload a clear picture of your survey plan</h6>
+                            </div>
+                        </div>
+                        <div class="p-2 flex-fill">
+                            <div class="text-center">
+                                <img src="../static/images/email.png" class="img-fluid" alt="an icon">
+                                <h6 class="building">Enter your e-mail in the space provided</h6>
+                            </div>
+                        </div>
+                        <div class="p-2 flex-fill">
+                            <div class="text-center">
+                                <img src="../static/images/time.png" class="img-fluid" alt="an icon">
+                                <h6 class="building">you’ll be getting your charting report  sent to your mail within the hour</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="online-planning">
+                        <div class="d-flex">
+                            <div class="p-2">
+                                <div>
+                                    <p>kindly consult with our online planning consultant if you need help</p>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="../static/images/consult.png" class="img-fluid" alt="an icon">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </article>
+{% endblock %}
