@@ -12,44 +12,6 @@
     <link href="css/smallerscreen.css" rel="stylesheet">
     <link rel="stylesheet" href="css/aos.css" />
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        header h1 {
-            margin-top: 30px;
-            font-weight: 900;
-            font-size: 38px;
-            line-height: 45px;
-            color: #fff;
-        }
-        header h2 {
-            font-weight: bold;
-            font-size: 41px;
-            line-height: 48px;
-            color: #fff;
-            padding-bottom: 30px;
-        }
-        .consult-div {
-            margin: -60px auto 0 auto;
-        }
-        .consult-div hr {
-            width: 70%;
-            margin: auto;
-            border: 1px solid rgba(0, 0, 0, 0.65);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-        }
-
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 25px;
-            }
-            header h2 {
-                font-size: 30px;
-            }
-        }
-        #dropdownitem.dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
-                /*top: 90px!important;*/
-                left: 100%!important;
-        }
-    </style>
 </head>
 <body> 
     <header> 
@@ -88,112 +50,59 @@
               </div>
             </div>
         </nav>
-        <div class="building-permit">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4"></div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="text-center" data-aos="fade-right">
-                            <h1>SECURE YOUR BUILDING PERMIT WITH A CLICK</h1>
-                            <h2>Building a house is good, building a home in a house is better.</h2>
-                        </div>
+        <div class="container-fluid">
+            <div class="row" data-aos="fade-right">
+                <div class="col-lg-6 col-md-6">
+                    <div>
+                        <h1>The Better Way To Process And Secure My Building Permit.</h1>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div>
+                        <img src="images/construction-engineer.png" class="img-fluid" alt="A construction engineer">
                     </div>
                 </div>
             </div>
+        </div>
+        <div class="text-center">
+            <a class="btn btn-create" href="signup.html" data-aos="fade-up">Create account</a>
         </div>
     </header>
     <article>
-        <div class="select-city" data-aos="fade-down">
-            <div class="container-fluid">
+        <section id="permit-wrapper" data-aos="fade-up">
+            <div class="container">
                 <div class="row">
-                    <div class="col-lg-4 col-md-4">
-                        <div>
-                            <img src="images/permit.png" class="img-fluid permit" alt="an image">
-                        </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="building-permit-action.html"><div class="text-center">
+                            <img src="images/building-permit.png" class="img-fluid" alt="Building permit"><br>
+                            <h6 class="building">Building<br>Permit</h6>
+                        </div></a>
                     </div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="dropdown-space">
-                            <div class="dropdown">
-                                <button type="button" id="select-city" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                  SELECT CITY
-                                </button>
-                                <div class="selectcity dropdown-menu">
-                                    <a class="dropdown-item" href="#"  data-toggle="dropdown">-----LAGOS-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">-----AGEGE-----&emsp;<i class="fa fa-angle-right"></i></a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item" href="#">----OYO----&emsp;<i class="fa fa-angle-right"></i></a>
-                                    <a class="dropdown-item" href="#" data-toggle="dropdown">-----ABUJA-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Link 1</a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
-                                        </div>
-                                    </a>
-                                </div>
-                            </div>
-
-                            <a class="btn btn-apply" href="">APPLY FOR BUILDING PERMIT &emsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
-                        </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href="land-info.html"><div class="text-center">
+                            <img src="images/land-information.png" class="img-fluid" alt="Land Information">
+                            <h6>Land<br>Information</h6>
+                        </div></a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href=""><div class="text-center">
+                            <img src="images/governor-consent.png" class="img-fluid" alt="">
+                            <h6>Governor’s<br>Consent</h6>
+                        </div></a>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-6 col-6">
+                        <a href=""><div class="text-center">
+                            <img src="images/occupancy.png" class="img-fluid" alt="">
+                            <h6 class="building">C of 0</h6>
+                        </div></a>
                     </div>
                 </div>
-            </div>
-        </div>
-        <div class="consult-div">
-            <hr>
-        </div>
-        <div class="text-center" data-aos="slide-in">
-            <a class="btn btn-create btn-chart" href="e-charting.html"><img src="images/e.png" class="img-fluid" alt="icon">&nbsp;charting &nbsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
-        </div>
-        <section id="howitworks" data-aos="fade-up">
-            <div class="howitworks">
-                <div class="container-fluid">
-                    <h2>How it Works</h2>
-                    <div class="d-flex">
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/echarting.png" class="img-fluid" alt="an icon"><br>
-                                <h6 class="building">Click on the e charting menu bar, enter full address of site to check</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/gps.png" class="img-fluid" alt="an icon">
-                                <h6>Enter northern and eastern co-ordinates from the survey plan</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/plan.png" class="img-fluid" alt="an icon">
-                                <h6>upload a clear picture of your survey plan</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/email.png" class="img-fluid" alt="an icon">
-                                <h6 class="building">Enter your e-mail in the space provided</h6>
-                            </div>
-                        </div>
-                        <div class="p-2 flex-fill">
-                            <div class="text-center">
-                                <img src="images/time.png" class="img-fluid" alt="an icon">
-                                <h6 class="building">you’ll be getting your charting report  sent to your mail within the hour</h6>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="online-planning">
-                        <div class="d-flex">
-                            <div class="p-2">
-                                <div>
-                                    <p>kindly consult with our online planning consultant if you need help</p>
-                                </div>
-                            </div>
-                            <div>
-                                <img src="images/consult.png" class="img-fluid" alt="an icon">
-                            </div>
-                        </div>
-                    </div>
+                <div class="text-center">
+                    <a class="btn btn-need">Need an Architect/Engineer</a>
+                </div>
+                <div class="consult-div">
+                    <p>Consult and Process your landing documents with ease</p>
+                    <hr>
                 </div>
             </div>
         </section>
