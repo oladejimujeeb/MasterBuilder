@@ -20,5 +20,9 @@ def signin():
 def landInfo():
     return render_template('land-info.html')
 
+@app.route('/request')
+def request():
+    return render_template('request.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
