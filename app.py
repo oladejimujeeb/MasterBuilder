@@ -24,5 +24,17 @@ def landInfo():
 def request():
     return render_template('request.html')
 
+@app.route('/requestsuccessful')
+def requestsuccessful():
+    return render_template('requestsuccessful.html')
+
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
+@app.route('/building-permit-action')
+def buildingPermitAction():
+    return render_template('building-permit-action.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
