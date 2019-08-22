@@ -66,7 +66,6 @@ numpy==1.14.5
 pandas==0.23.4
 passlib==1.7.1
 pbr==4.2.0
-pdfshuffler==0.6.0
 Pillow==5.2.0
 protobuf==3.6.1
 psycopg2==2.7.4
