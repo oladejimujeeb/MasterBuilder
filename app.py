@@ -36,5 +36,9 @@ def contact():
 def buildingPermitAction():
     return render_template('building-permit-action.html')
 
+@app.route('/faq')
+def faq():
+    return render_template('faq.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
