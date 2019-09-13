@@ -38,6 +38,18 @@ def contact():
 def buildingPermitAction():
     return render_template('building-permit-action.html')
 
+@app.route('/building-permit')
+def buildingPermit():
+    return render_template('building-permit.html')
+
+@app.route('/consent')
+def consent():
+    return render_template('consent.html')
+
+@app.route('/e-charting')
+def eCharting():
+    return render_template('e-charting.html')
+
 @app.route('/faq')
 def faq():
     return render_template('faq.html')

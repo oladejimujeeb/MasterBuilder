@@ -1,117 +1,30 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<title>Master Builder - Better way to secure your Building Permit</title>
-	<meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
-    <link href="font-awesome-4.7.0/css/font-awesome-animation.min.css" rel="stylesheet"/>
-    <link href="css/bootstrap.min.css" rel="stylesheet" />
-    <link href="css/style.css" rel="stylesheet">
-    <link href="css/smallerscreen.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/aos.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <style>
-        header h1 {
-            margin-top: 30px;
-            font-weight: 900;
-            font-size: 38px;
-            line-height: 45px;
-            color: #fff;
-        }
-        header h2 {
-            font-weight: bold;
-            font-size: 41px;
-            line-height: 48px;
-            color: #fff;
-            padding-bottom: 30px;
-        }
-        .consult-div {
-            margin: -60px auto 0 auto;
-        }
-        .consult-div hr {
-            width: 70%;
-            margin: auto;
-            border: 1px solid rgba(0, 0, 0, 0.65);
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
-        }
+{% extends 'layout.html' %}
+{% block title %}
+<title> Master Builder - Better way to secure your Building Permit </title>
+{% endblock %}
 
-        @media screen and (max-width: 768px) {
-            header h1 {
-                font-size: 25px;
-            }
-            header h2 {
-                font-size: 30px;
-            }
-        }
-        #dropdownitem.dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
-                /*top: 90px!important;*/
-                left: 100%!important;
-        }
-    </style>
-</head>
-<body> 
-    <header> 
-        <nav class="navbar navbar-expand-lg navbar-dark">
-            <div class="container-fluid">
-              <a class="navbar-brand" href="index.html"><img src="images/logo.jpeg" class="img-fluid" alt="logo"></a>
-              <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb">
-                <span class="navbar-toggler-icon"></span>
-              </button>
+{% block style %}
+{% include 'includes/_building-permit-styles.html' %}
+{%endblock%}
 
-              <div class="collapse navbar-collapse" id="navb">
-                <form class="ml-auto">
-                    <div class="btn-group">
-                        <div class="btn-group">
-                            <button type="button" class="btn btn-primary dropdown-toggle btn-documents" data-toggle="dropdown">Documents</button>
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Tablet</a>
-                                <a class="dropdown-item" href="#">Smartphone</a>
-                            </div>
-                        </div>
-                        <input class="form-control mr-sm-2 search-input" type="text">
-                        <button type="button" class="btn btn-primary btn-search"><i class="fa fa-search"></i></button>
-                    </div>
-                </form>
-                <ul class="navbar-nav ml-auto">
-                  <li class="nav-item active">
-                    <a class="nav-link" href="about.html">ABOUT US</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="faq.html">FAQ</a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link" href="signin.html">LOGIN</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-        </nav>
-        <div class="building-permit">
-            <div class="container-fluid">
-                <div class="row">
-                    <div class="col-lg-4 col-md-4"></div>
-                    <div class="col-lg-8 col-md-8">
-                        <div class="text-center" data-aos="fade-right">
-                            <h1>SECURE YOUR BUILDING PERMIT WITH A CLICK</h1>
-                            <h2>Building a house is good, building a home in a house is better.</h2>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+{% block body %}
     <main>
-        <div class="select-city" data-aos="fade-down">
+        <div class="select-city" data-aos="fade-down" style="background: rgba(233, 16, 16, 0.53);">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-4 col-md-4">
                         <div>
-                            <img src="images/permit.png" class="img-fluid permit" alt="an image">
+                            <img src="../static/images/permit.png" class="img-fluid permit" alt="an image">
                         </div>
                     </div>
                     <div class="col-lg-8 col-md-8">
+                        <div class="secure-click">
+                            <div class="text-center">
+                                <h2>SECURE YOUR BUILDING PERMIT WITH A CLICK</h2>
+                                <h1>Building a house is good, building a home in a house is better.</h1>
+                            </div>
+                            <h3>Lets get started !</h3>
+                        </div>
                         <div class="dropdown-space">
                             <div class="dropdown">
                                 <button type="button" id="select-city" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
@@ -133,18 +46,21 @@
                                     </a>
                                 </div>
                             </div>
-
-                            <a class="btn btn-apply" href="">APPLY FOR BUILDING PERMIT &emsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
+                        </div>
+                        <div class="secure-click">
+                            <a class="btn btn-apply" href="building-permit-action">APPLY FOR BUILDING PERMIT &emsp;<img src="../static/images/arrow.png" class="img-fluid" alt="icon"></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="consult-div">
-            <hr>
-        </div>
-        <div class="text-center" data-aos="slide-in">
-            <a class="btn btn-create btn-chart" href="e-charting.html"><img src="images/e.png" class="img-fluid" alt="icon">&nbsp;charting &nbsp;<img src="images/arrow.png" class="img-fluid" alt="icon"></a>
+        <div>
+            <div class="consult-div">
+                <hr>
+            </div>
+            <div class="text-center" data-aos="slide-in">
+                <a class="btn btn-create btn-chart" href="e-charting"><img src="../static/images/e.png" class="img-fluid" alt="icon">&nbsp;charting &nbsp;<img src="../static/images/arrow.png" class="img-fluid" alt="icon"></a>
+            </div>
         </div>
         <section id="howitworks" data-aos="fade-up">
             <div class="howitworks">
@@ -153,31 +69,31 @@
                     <div class="d-flex">
                         <div class="p-2 flex-fill">
                             <div class="text-center">
-                                <img src="images/echarting.png" class="img-fluid" alt="an icon"><br>
+                                <img src="../static/images/echarting.png" class="img-fluid" alt="an icon"><br>
                                 <h6 class="building">Click on the e charting menu bar, enter full address of site to check</h6>
                             </div>
                         </div>
                         <div class="p-2 flex-fill">
                             <div class="text-center">
-                                <img src="images/gps.png" class="img-fluid" alt="an icon">
+                                <img src="../static/images/gps.png" class="img-fluid" alt="an icon">
                                 <h6>Enter northern and eastern co-ordinates from the survey plan</h6>
                             </div>
                         </div>
                         <div class="p-2 flex-fill">
                             <div class="text-center">
-                                <img src="images/plan.png" class="img-fluid" alt="an icon">
+                                <img src="../static/images/plan.png" class="img-fluid" alt="an icon">
                                 <h6>upload a clear picture of your survey plan</h6>
                             </div>
                         </div>
                         <div class="p-2 flex-fill">
                             <div class="text-center">
-                                <img src="images/email.png" class="img-fluid" alt="an icon">
+                                <img src="../static/images/email.png" class="img-fluid" alt="an icon">
                                 <h6 class="building">Enter your e-mail in the space provided</h6>
                             </div>
                         </div>
                         <div class="p-2 flex-fill">
                             <div class="text-center">
-                                <img src="images/time.png" class="img-fluid" alt="an icon">
+                                <img src="../static/images/time.png" class="img-fluid" alt="an icon">
                                 <h6 class="building">you’ll be getting your charting report  sent to your mail within the hour</h6>
                             </div>
                         </div>
@@ -190,80 +106,13 @@
                                 </div>
                             </div>
                             <div>
-                                <img src="images/consult.png" class="img-fluid" alt="an icon">
+                                <img src="../static/images/consult.png" class="img-fluid" alt="an icon">
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </section>
-
-        <section class="master-builder" data-aos="slide-up">
-            <p><span>Master Builder</span> offers Building Plan Approval Processing, C of O, Building Designs, Architecture, Engineering Designs and Land Survey  documentation. It also offers Builders, Construction Engineers, Landlords and tenants in major Nigerian cities (Lagos, Abuja, Abeokuta, Ibadan etc.) a platform to meet and consult professionals in the construction industry who would deliver services in it’s various ethical approach/standard.</p>
-            <p>Master BUilder  has a strong market position and a coherent strategy to not only ensure client satisfaction but also that design standards are maintained. It has established clear steps to achieve its aim which is to build a strong digitized process for town planning practice in Nigerian cities (Lagos, Abuja, Abeokuta, Ibadan etc.)</p>
-            <p>Master Builder is the first digital platform that provides the best consultancy services for townplanning practice in NIgeria, not only does it make available a platform to access informations regardng town planning practice in top most Nigerian cities,  it also allowers it’s users to have a one on one interaction with practicing professionals in relative fiends for online consultancy services.</p>
-            <p>Master Builder is about promoting sustainable designs, we also train undergraduate designers in the art and craft of sustainability in design  to ensure a community of environmental scientists who who champion sustainabilitity in topmost NIgerian cities. Our designs are adaptive, responsive and inovative, much more our services remain efficient and yet cost friendly.</p>
-        </section>     
+        </section>   
     </main>
 
-    <footer data-aos="zoom-in">
-        <div class="container">
-            <div class="footer">
-                <hr>
-                <div class="mt-30">
-                    <div class="row">
-                        <div class="col-lg-6 col-md-6">
-                            <div>
-                                <h5>GET TO KNOW US</h5>
-                                <div class="mb-30">
-                                    <p><a href="">About Us</a></p>
-                                    <p><a href="">FAQs</a></p>
-                                    <p><a href="">Terms of Use</a></p>
-                                    <p><a href="">Privacy Policy</a></p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6">
-                            <div>
-                                <a href=""><img src="images/facebook.png" class="img-fluid" alt="facebook"></a>
-                                <a href=""><img src="images/twitter.png" class="img-fluid" alt="twitter"></a>
-                                <a href=""><img src="images/instagram.png" class="img-fluid" alt="instagram"></a>
-                                <a href=""><img src="images/linkedin.png" class="img-fluid linkedin" alt="linkedin"></a>
-                            </div>
-                            <div class="text-right">
-                                <p>Physical Office Address: 33 Wole Adetipe Street, Agege, Lagos, Nigeria.</p>
-                                <p>0700 933 933 933 (Mon-Fri from 9am-5pm) - contact@masterbuilder.com</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <h6>© 2019 Master BUilder Global Limited</h6>
-            </div>
-            <a href=""><img src="images/help.png" class="img-fluid ask-questions" alt="Ask questions"></a>
-        </div>
-    </footer>
-    
-
-
-    <script src="js/jquery.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/highlight.min.js"></script>
-    <script src="js/aos.js"></script>
-    <script>
-        AOS.init({
-            easing: 'ease-out-back',
-            duration: 1000
-        });
-    </script>
-
-    <script>
-        hljs.initHighlightingOnLoad();
-        $('.hero__scroll').on('click', function(e) {
-            $('html, body').animate({
-                scrollTop: $(window).height()
-            }, 1200);
-        });
-    </script>
-</body>
-</html>
+{% endblock %}
