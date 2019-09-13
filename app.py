@@ -1,4 +1,6 @@
-from flask import Flask, render_template, request, redirect, url_for, session
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify
+from flask_sqlalchemy import SQLAlchemy
+from authentication import *
 
 app = Flask("__name__")
 app.config.from_pyfile('config.cfg')
@@ -39,6 +41,12 @@ def buildingPermitAction():
 @app.route('/faq')
 def faq():
     return render_template('faq.html')
+
+# API LIST
+@app.route('/api/register', methods=['POST'])
+def apiRegister():
+    json_list = register_user()
+    return json_list
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
