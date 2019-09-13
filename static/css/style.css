@@ -117,7 +117,7 @@ footer hr {
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
 }
 #buildingpermit-wrapper h1 {
-    margin-top: 40px;
+    margin-top: 55px;
 }
 .master-builder {
     background: #214AB1;
@@ -241,11 +241,27 @@ footer .text-right {
 }
 .select-city .permit {
     margin-left: 50px;
-    margin-top: -70%;
+    /*margin-top: -70%;*/
+}
+.select-city .secure-click {
+    margin-left: 40px;
+}
+.select-city h2 {
+    padding-top: 30px;
+    font-weight: 900;
+    font-size: 38px;
+    line-height: 45px;
+    color: #FFF;
+}
+.select-city h1 {
+    font-weight: bold;
+    font-size: 41px;
+    line-height: 48px;
+    color: #FFFFFF;
 }
 .dropdown-space {
     margin-top: 15px;
-    margin-left: -40px;
+    margin-left: 40px;
 }
 #select-city {
     background: #214AB1;
@@ -255,6 +271,12 @@ footer .text-right {
     color: #FFF;
     padding: 15px;
     padding-top: 12px;
+}
+.select-city h3 {
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 35px;
+    color: #000000;
 }
 .selectcity.dropdown-menu {
     background: #C4C4C4;
@@ -292,7 +314,7 @@ footer .text-right {
     margin-bottom: 50px;
 }
 #howitworks {
-    background: url(../images/howitworks.png);
+    background: url(./../images/howitworks.png);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: bottom left;
@@ -533,9 +555,23 @@ a:hover {
     line-height: 23px;
     color: #fff;
 }
-
+#consent-wrapper .container-fluid {
+    width: 70%;
+}
+#consent-wrapper p {
+    margin-left: 0;
+    margin-top: 15px;
+}
+.pd-10 {
+    padding: 10px;
+}
+#consent-wrapper .action-wrapper p span {
+    width: 70%;
+    margin: auto;
+    margin-top: 30px;
+}
 /* faq page */
-#contact-wrapper {
+#faq-wrapper {
     background: url(./../images/faq-background.png);
     background-size: cover;
     background-repeat: no-repeat;
@@ -545,11 +581,11 @@ a:hover {
     background: #FF5A5F;
     border-radius: 30px;
     font-weight: bold;
-    font-size: 25px;
+    font-size: 16px;
     line-height: 29px;
     text-align: justify;
     color: #FFF;
-    padding: 0 5px;
+    padding: 15px;
 }
 .faq h5,
 .faq-class h5 {
@@ -569,5 +605,4 @@ a:hover {
 }
 .faq-background.blue-background {
     background: #214AB1;
-    padding: 5px;
 }
