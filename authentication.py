@@ -2,7 +2,8 @@ from allimports import *
 from models import *
 from middleware import *
 import datetime
-import uuid 
+import uuid
+from flask import Flask, request, jsonify, json
 
 current_date = datetime.datetime.today()
 
@@ -20,6 +21,7 @@ def hash_password(password):
 #REGISTER USER API - POST
 def register_user():
     # pre_register()
+    # data = request.get_json()
     fields = ['lastname', 'firstname', 'phonenumber', 'email', 'password']
     if not all(i in request.json for i in fields):
         return jsonify({'status' : False, 'message' : 'One or More Missing Field(s)!!!'}), 400
@@ -33,12 +35,15 @@ def register_user():
         user_str = str(uuid.uuid4())[:6]
         user.user_id = 'user00' + str(user.id) + user_str 
         db.session.commit()
-        return jsonify({'status': True, 'message': 'Success'}) 
+        ##send mail to user##
+
+        ##end##
+        return jsonify({'status': True, 'message': 'Success. Please Confirm your email Address'}) 
     except exc.IntegrityError:
         return jsonify({'status' : False, 'message' : 'Email Or Phone Number Exists'}), 400
 
 #LOG IN USER API - POST
-def signin():
+def sign_in():
     # when request is coming from body of form
     # data = request.get_json()
     # email = data['email']
@@ -62,3 +67,21 @@ def signin():
         return jsonify({'status': True, 'message' : 'Log In Successful', 'token' : token.decode('UTF-8')})
 
     return jsonify({'status': False, 'message':'Could not verify. Login Required'}), 401
+
+def get_user_details(userid):
+    try:
+        user = User.query.filter_by(user_id=userid).first()
+        if not user:
+            return jsonify({'status' : False, 'message' : 'User Not Found'}), 404
+
+        data = {}
+        data['user_id'] = user.user_id
+        data['user_lastname'] = user.user_lastname
+        data['user_firstname'] = user.user_firstname
+        data['user_phone_number'] = user.user_phone_number
+        data['user_email'] = user.user_email
+        data['user_admin'] = user.user_admin
+
+        return jsonify({'user' : data, 'status' : True, 'message' : 'Success'})
+    except:
+        return jsonify({'status' : False, 'message' : 'Failed'})

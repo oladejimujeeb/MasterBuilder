@@ -1,10 +1,10 @@
-from flask import Flask, render_template, request, redirect, url_for, session, jsonify
-from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, render_template, request, redirect, url_for, session, jsonify, json
 from authentication import *
+from models import *
 
 app = Flask("__name__")
 app.config.from_pyfile('config.cfg')
-#db.init_app(app)
+db.init_app(app)
 
 @app.route('/')
 def home():
@@ -54,11 +54,25 @@ def eCharting():
 def faq():
     return render_template('faq.html')
 
-# API LIST
+#########################################
+################ APIs LIST ##############
+#########################################
+################   USERS   ##############
 @app.route('/api/register', methods=['POST'])
 def apiRegister():
     json_list = register_user()
     return json_list
+
+@app.route('/api/login', methods=['POST'])
+def apiSignIn():
+    json_list = sign_in()
+    return json_list
+
+@app.route('/api/user/<user_id>', methods=['GET'])
+@token_required
+def user_info(current_user, user_id):
+    output = get_user_details(user_id)
+    return output
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
