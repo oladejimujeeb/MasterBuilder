@@ -1,8 +1,11 @@
 body {
     font-family: 'Roboto', sans-serif;
 }
+header {
+    box-shadow: 0 2px 10px rgba(200, 200, 200, 0.5);
+}
 .navbar {
-    margin-top: 25px;
+    padding-bottom: 20px;
 }
 .container-fluid {
     width: 90%;
@@ -28,7 +31,7 @@ body {
     color: #5473c3;
     font-weight: bold;
 }
-.navbar form {
+.navbar .navbar-collapse {
     margin-top: 10px;
 }
 .btn-group {
@@ -39,9 +42,7 @@ body {
     border-radius: 9px 0px 0px 9px;
     border: none;
     font-weight: 500;
-    font-size: 25px;
-    line-height: 29px;
-    padding-top: 0;
+    font-size: 15px;
 }
 .search-input {
     background: rgba(41, 222, 70, 0.08);
@@ -280,6 +281,7 @@ footer .text-right {
 }
 .selectcity.dropdown-menu {
     background: #C4C4C4;
+    width: 100%;
     border: 1px solid #000000;
     border-radius: 5px;
 }
@@ -373,14 +375,16 @@ footer .text-right {
     transform: matrix(1, 0, 0, 1, 0, 0);
 }
 .action-wrapper p,
-.building-permit p {
+.building-permit p,
+.land-info p {
     margin-left: 95px;
     font-size: 20px;
     line-height: 23px;
     color: #000000;
 }
 .action-wrapper p span,
-.building-permit p span {
+.building-permit p span,
+.land-info p span {
     color: #F33B3B;
     display: block;
     padding-top: 20px;
@@ -420,14 +424,16 @@ footer .text-right {
 
 /* Land Information */
 #form-wrapper {
-    width: 40%;
+    width: auto;
     margin: 30px auto;
 }
 #form-wrapper .form-wrap {
     width: 80%;
     margin: auto;
 }
-
+.pt-40 {
+    padding-top: 40px;
+}
 /* success page */
 #success-wrapper p {
     width: 37%;
