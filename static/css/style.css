@@ -424,7 +424,7 @@ footer .text-right {
 
 /* Land Information */
 #form-wrapper {
-    width: auto;
+    width: 100%;
     margin: 30px auto;
 }
 #form-wrapper .form-wrap {
