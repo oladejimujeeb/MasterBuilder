@@ -1,8 +1,7 @@
-# from flask import Flask, request, jsonify
-# from flask_sqlalchemy import SQLAlchemy
+from flask import Flask, request, jsonify, json
+from flask_sqlalchemy import SQLAlchemy
 from functools import wraps
-from app import *
-import jwt
+import jwt 
 
 app = Flask("__name__")
 app.config.from_pyfile('config.cfg')

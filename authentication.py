@@ -44,10 +44,6 @@ def register_user():
 
 #LOG IN USER API - POST
 def sign_in():
-    # when request is coming from body of form
-    # data = request.get_json()
-    # email = data['email']
-    # password = data['password']
     auth = request.authorization
 
     #No authorization/auth username or password???

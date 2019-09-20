@@ -10,20 +10,44 @@ db.init_app(app)
 def home():
     return render_template('index.html')
 
-@app.route('/signup')
+@app.route('/signup', methods=['GET', 'POST'])
 def signup():
+    if request.method == "POST":
+        result = registerByAPI()
+        status = result["status"]
+        if status:
+            sux = result["message"]
+            return render_template('signup.html', sux=sux)
+        else:
+            fail = result["message"]
+            return render_template('signup.html', fail=fail)
+
     return render_template('signup.html')
 
-@app.route('/signin')
+@app.route('/signin', methods=['GET', 'POST'])
 def signin():
+    if request.method == "POST":
+        result = loginByAPI()
+        # return result
+        status = result["status"]
+        if status is True:
+            current_user = result["user_id"]
+            current_mail = result["user_mail"]
+            session["user"] = current_user
+            return render_template('land-info.html', current_mail=current_mail)
+        else:
+            fail = result["message"]
+            return render_template('signin.html', fail=fail)
+
     return render_template('signin.html')
 
 @app.route('/land-info')
-def landInfo():
+@token_required
+def landInfo(current_user):
     return render_template('land-info.html')
 
 @app.route('/request')
-def request():
+def requestQ():
     return render_template('request.html')
 
 @app.route('/requestsuccessful')
@@ -58,10 +82,26 @@ def faq():
 ################ APIs LIST ##############
 #########################################
 ################   USERS   ##############
-@app.route('/api/register', methods=['POST'])
+@app.route('/api/register', methods=['GET','POST'])
 def apiRegister():
-    json_list = register_user()
-    return json_list
+    if request.method == "POST":
+        json_list = register_user()
+        return json_list
+    else:
+        return jsonify({'message' : 'Hello MasterBuilder Developer. Registration is a POST REQUEST'})
+
+@app.route('/api/<token>', methods=['POST'])
+def confirm_registration(token):
+    try:
+        email = s.loads(token, salt='mail-confirm', max_age=60 * 15)
+        sux = "Email Confirmed. Please Log In To Continue."
+        #update confirm
+        return render_template('signin', sux=sux)
+    except SignatureExpired:
+        fail = "Link Expired. A new Token Would Be Sent Soon. Please check your email address"
+        confirm_email(mail, name)
+        return render_template('signin', fail=fail)        
+
 
 @app.route('/api/login', methods=['POST'])
 def apiSignIn():

@@ -13,12 +13,16 @@ s = URLSafeTimedSerializer('d3m0n61nM3')
 def generate_token(email):
     return (s.dumps(email, salt='mail-confirm'))
 
-def send_email(mail, email):
-    token = generate_token(mail)
-    msg = Message('Confirm Email', sender='mysplupdates@gmail.com', recipients=[mail, email])
-    link = url_for('confirm_update', token=token, _external=True)
-    msg.body = "Dear User, /n/n Please click on the link provided to cofirm your business location update./n The link expires in 15 miuntes./n Please ignore if you did not try to update Your business location. /n {}".format(link)
-    zmail.send(msg)
+def confirm_email(mail, name):
+    try:
+        token = generate_token(mail)
+        msg = Message('Confirm Email', sender='mysplupdates@gmail.com', recipients=[mail, 'm.olabisimurit@gmail.com'])
+        link = url_for('confirm_registration', token=token, _external=True)
+        msg.body = "Dear " + name + ", Please click on the link provided to cofirm your Email Address for MasterBuilder. The link expires in 15 miuntes. Please ignore if you did not register on thr platform. {}".format(link)
+        zmail.send(msg)
+        return jsonify({'status': True, 'message': 'Success. Please Confirm your Email Address'}) 
+    except:
+        return jsonify({'status' : False, 'message' : 'Email Not Sent. Please get in touch with the admin'}), 400
 
 def sendLandInfo(currentUser):
     status, mailAdd, attachment = getLandInfo(currentUser)
