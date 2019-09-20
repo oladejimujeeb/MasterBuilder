@@ -52,5 +52,9 @@ def eCharting():
 def faq():
     return render_template('faq.html')
 
+@app.route('/index-two')
+def indexTwo():
+    return render_template('index-two.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
