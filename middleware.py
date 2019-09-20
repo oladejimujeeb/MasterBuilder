@@ -113,3 +113,22 @@ def landInfoByAPI(currentUser):
         #     return (response.json())
     except:
         return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
+
+def permitByAPI(currentUser, currentMail):
+    try:
+        data = {
+            "city" : request.form.get('city'),
+            current_user : currentUser,
+            current_mail : currentMail
+        }
+
+        url = "http://0.0.0.0:5000/api/permit"
+
+        headers = {
+            'content-type': 'application/json'
+        }
+
+        response = requests.post(url, headers=headers, data=json.dumps(data))
+        return (response.json())
+    except:
+        return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400

@@ -47,16 +47,12 @@ def sendLandInfo():
             # not succesfully added do sothg elsefields
             return jsonify({'status' : False, 'message' : 'Operation Failed. Please Retry'})
 
-def sendECharting(currentUser):
-    status, mailAdd, attachment = getLandInfo()
+def sendBuildPermit():
+    status, time, mail = getBuildPermit()
     if status:
         # succesfully added, send mail
-        msg = Message('Electronic Charting Request', sender='mysplupdates@gmail.com', recipients=['m.olabisimurit@gmail.com'])
-        msg.body = "Hi, A Request Has Been Made For e-Charting From " + mailAdd + ". Kindly, Find Attached The Survey Plan. Thank you."
-        msg.attach(
-            attachment.filename,
-            'application/octect-stream',
-            attachment.read())
+        msg = Message('Building Permit Request', sender='mysplupdates@gmail.com', recipients=['m.olabisimurit@gmail.com', 'hiphyhisaac@gmail.com'])
+        msg.body = "Hi, A Request Has Been Made For Building Permit From " + mail + " at " + time + "."
         zmail.send(msg)
         return jsonify({'status' : True, 'message' : 'Success. Please Check the Provided Email For Details'})
     else:

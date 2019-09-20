@@ -64,16 +64,29 @@ def landInfo():
 def requestQ():
     return render_template('request.html')
 
-@app.route('/requestsuccessful')
-def requestsuccessful():
-    return render_template('requestsuccessful.html')
+# @app.route('/requestsuccessful')
+# def requestsuccessful():
+#     return render_template('requestsuccessful.html')
 
 @app.route('/contact')
 def contact():
     return render_template('contact.html')
 
-@app.route('/building-permit-action')
+@app.route('/building-permit-action', methods=['GET','POST'])
 def buildingPermitAction():
+    current_mail = session.get('current_mail', None)
+    current_user = session.get('current_user', None)
+    if not current_user:
+        return redirect(url_for('signin'))
+    if request.method == "POST":
+        sendInfo = permitByAPI(current_user, current_mail)
+        status = sendInfo["status"]
+        if status:
+            message = sendInfo["message"]
+            return render_template("requestsuccesful.html", current_mail=current_mail, message=message)
+        else:
+            message = sendInfo["message"]
+            return render_template('building-permit-action.html', current_mail=current_mail, message=message)
     return render_template('building-permit-action.html')
 
 @app.route('/building-permit')
@@ -132,6 +145,11 @@ def user_info(current_user, user_id):
 @app.route('/api/landinfo', methods=['POST'])
 def apiLandInfo():
     json_list = sendLandInfo()
+    return json_list
+
+@app.route('/api/permit', methods=['POST'])
+def apiPermit():
+    json_list = sendBuildPermit()
     return json_list
 
 if __name__ == '__main__':

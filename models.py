@@ -88,15 +88,17 @@ class Land(db.Model):
 
 class BuildingPermit(db.Model):
     id = db.Column(db.Integer, primary_key=True)
+    request_city =  db.Column(db.String(50), unique=False)
     request_time = db.Column(db.DateTime, unique=False)
     request_status = db.Column(db.Boolean, unique=False)
 
     #foreign keys
     user_id = db.Column(db.String(25), db.ForeignKey('user.user_id'), unique=False)
 
-    def __init__(self, request_time, request_status):
+    def __init__(self, request_city, request_time, request_status):
         self.request_status = request_status
         self.request_time = request_time
+        self.request_city = request_city
 
 class LIResponse(db.Model):
     id = db.Column(db.Integer, primary_key=True)

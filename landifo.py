@@ -30,4 +30,21 @@ def getLandInfo():
     except:
         return False, data['email'], request.files['surveyplan'], "fux"
 
+def getBuildPermit():
+    #confirm all is in request
+    fields = ["city", "current_user", "current_mail"]
+    if not all(i in request.json for i in fields):
+        return False, 0, 0
+    data = request.get_json()
+    try:
+        permit = BuildingPermit(data["city"], current_date, 0)
+        db.session.add(permit)
+        db.session.commit()
+        permit.user_id = data["current_user"]
+        db.session.commit()
+        return True, permit.request_time, data["current_mail"]
+    except:
+        return False, 0, 0
+
+
 # update land info
