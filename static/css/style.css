@@ -615,3 +615,9 @@ a:hover {
 .faq-background.blue-background {
     background: #214AB1;
 }
+.bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+    width: 100%;
+}
+.form-control:focus {
+    outline: none!important;
+}
