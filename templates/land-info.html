@@ -10,75 +10,74 @@
 {% block body %}
 <!-- page specific banner -->
     <main>
-        <section class="building-permit" data-aos="fade-down">
-            <div class="form-wrapper">
-                <div class="text-center">
-                    <h1>Land Information</h1>
-                    <h2>This would help you ascertain the use of your land in compliance with the State Operative Development Plans.</h2>
+        <div>
+            <div class="row" style="margin-right: 0;">
+                <div class="col-lg-6 col-md-6">
+                    <section class="building-permit" data-aos="fade-down">
+                        <div class="form-wrapper" style="padding: 100px 0 500px 0;">
+                            <h2>This would help you ascertain the use of your land in compliance with the State Operative Development Plans.</h2>
+                        </div>
+                    </section>
                 </div>
-                {% if message %}
+                <div class="col-lg-6 col-md-6 land-info">
+                    <div class="text-center pt-40">
+                        <h1>Land Information</h1>
+                    </div>
+                    {% if message %}
                 <div class="text-center">
                     <p class="alert alert-danger">{{message}}</p>
                 </div>
                 {% endif %}
-                <div class="select-city">
-                    <div id="form-wrapper">
-                        <div class="form-wrap">
-                            <div class="dropdown">
-                                <button type="button" id="select-city" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                                    SELECT CITY
-                                </button>
-                                <div class="selectcity dropdown-menu">
-                                    <a class="dropdown-item" href="#"  data-toggle="dropdown">-----LAGOS-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">-----AGEGE-----&emsp;<i class="fa fa-angle-right"></i></a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
-                                        </div>
-                                    </a>
-                                    <a class="dropdown-item" href="#">----OYO----&emsp;<i class="fa fa-angle-right"></i></a>
-                                    <a class="dropdown-item" href="#" data-toggle="dropdown">-----ABUJA-----&emsp;<i class="fa fa-angle-right"></i>
-                                        <div id="dropdownitem" class="dropdown-menu">
-                                            <a class="dropdown-item" href="#">Link 1</a>
-                                            <a class="dropdown-item" href="#">Link 2</a>
-                                        </div>
-                                    </a>
+                    <div class="select-city">
+                        <div id="form-wrapper">
+                            <form>
+                                <div class="form-wrap">
+                                    <div class="form-group">
+                                        <label for="select-city">SELECT CITY</label>
+                                        <select class="form-control selectcity" id="select-city">
+                                            <option value="Agege">LAGOS - AGEGE</option>
+                                            <option value="Ifako-Ijaye">LAGOS - IFAKO-IJAIYE</option>
+                                            <option value="Kosofe">LAGOS - KOSOFE</option>
+                                            <option value="Ojo">LAGOS - OJO</option>
+                                            <option value="Lekki">LAGOS - LEKKI</option>
+                                            <option value="Epe">LAGOS - EPE</option>
+                                            <option value="Ikoyi">LAGOS - IKOYI</option>
+                                            <option value="Eti-Osa">LAGOS - ETI-OSA</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="siteaddress">ENTER SITE’S FULL ADDERESS</label>
+                                        <input type="text" class="form-control" id="siteaddress" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="western">ENTER NORTHERN CO-ORDINATE</label>
+                                        <input type="text" class="form-control" id="western" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="eastern">ENTER EASTERN CO-ORDINATE</label>
+                                        <input type="text" class="form-control" id="eastern" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="surveyplan">UPLOAD SURVEY PLAN</label>
+                                        <input type="file" class="form-control" id="surveyplan" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="email">ENTER EMAIL</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                    </div>
                                 </div>
-                            </div>
+                                <div class="text-center">
+                                    <p><span>*Ensure you have filled all required documents before charting, remember you can contact <a href="">support for help</a></span></p>
+                                    <div>
+                                        <button class="btn btn-create btn-chart" href=""><span>E</span>nter &nbsp;<img src="../static/images/arrow.png" class="img-fluid" alt="icon"></button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
-                        <form>
-                            <div class="form-wrap">
-                                <div class="form-group">
-                                    <label for="siteaddress">ENTER SITE’S FULL ADDERESS</label>
-                                    <input type="text" class="form-control" id="siteaddress" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="eastern">ENTER EASTERN CO-ORDINATE</label>
-                                    <input type="text" class="form-control" id="eastern" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="western">ENTER NORTHERN CO-ORDINATE</label>
-                                    <input type="text" class="form-control" id="western" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="surveyplan">UPLOAD SURVEY PLAN</label>
-                                    <input type="file" class="form-control" id="surveyplan" required>
-                                </div>
-                                <div class="form-group">
-                                    <label for="email">ENTER EMAIL</label>
-                                    <input type="email" class="form-control" id="email" required>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                <p><span>*Ensure you have filled all required documents before charting, remember you can contact <a href="">support for help</a></span></p>
-                                <div>
-                                    <button class="btn btn-create btn-chart" href=""><span>E</span>nter &nbsp;<img src="../static/images/arrow.png" class="img-fluid" alt="icon"></button>
-                                </div>
-                            </div>
-                        </form>
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
         <section id="howitworks" data-aos="fade-up">
             <div class="howitworks">
                 <div class="container-fluid">

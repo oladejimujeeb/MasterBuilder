@@ -15,7 +15,7 @@
     <link href="../static/css/style.css" rel="stylesheet">
     <link href="../static/css/smallerscreen.css" rel="stylesheet">
     <link rel="stylesheet" href="../static/css/aos.css" />
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito&display=swap" rel="stylesheet">
 
     <!-- page specific styles -->
     {% block style %}
@@ -38,8 +38,10 @@
                         <div class="btn-group">
                             <button type="button" class="btn btn-primary dropdown-toggle btn-documents" data-toggle="dropdown">Documents</button>
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="#">Tablet</a>
-                                <a class="dropdown-item" href="#">Smartphone</a>
+                                <a class="dropdown-item" href="#">Building Permit Process</a>
+                                <a class="dropdown-item" href="#">Land Information</a>
+                                <a class="dropdown-item" href="#">Governor's Consent</a>
+                                <a class="dropdown-item" href="#">C of O</a>
                             </div>
                         </div>
                         <input class="form-control mr-sm-2 search-input" type="text">
@@ -48,14 +50,14 @@
                 </form>
                 <ul class="navbar-nav ml-auto">
                   <li class="nav-item active">
-                    <a class="nav-link" href="about">ABOUT US</a>
+                    <a class="nav-link" href="about">About Us</a>
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="faq">FAQ</a>
                   </li>
                   <li class="nav-item">
                     {% if current_mail %}
-                    <a class="nav-link" href="signin">{{current_mail}}</a>
+                    <a class="nav-link" href="">{{current_mail}}</a>
                     {% else %}
                     <a class="nav-link" href="signin">LOGIN</a>
                     {% endif %}
