@@ -24,24 +24,31 @@ def confirm_email(mail, name):
     except:
         return jsonify({'status' : False, 'message' : 'Email Not Sent. Please get in touch with the admin'}), 400
 
-def sendLandInfo(currentUser):
-    status, mailAdd, attachment = getLandInfo(currentUser)
+def sendLandInfo():
+    status, mailAdd, attachment, message = getLandInfo()
     if status:
         # succesfully added, send mail
-        msg = Message('Land Information Request', sender='mysplupdates@gmail.com', recipients=[ 'm.olabisimurit@gmail.com'])
+        msg = Message('Land Information Request', sender='mysplupdates@gmail.com', recipients=[ 'm.olabisimurit@gmail.com', 'hiphyhisaac@gmail.com'])
         msg.body = "Hi, A Request Has Been Made For Land Information From " + mailAdd + ". Kindly, Find Attached The Survey Plan. Thank you."
         msg.attach(
             attachment.filename,
             'application/octect-stream',
             attachment.read())
         zmail.send(msg)
-        return jsonify({'status' : True, 'message' : 'Success. Please Check the Provided Email For Details'})
+        return jsonify({'status' : True, 'message' : 'Success. Please Check the Provided Email For Details in an Hour.'})
     else:
-        # not succesfully added do sothg elsefields
-        return jsonify({'status' : False, 'message' : 'Operation Failed. Please Retry'})
+        if message == 0:
+            # files missing
+            return jsonify({'status' : False, 'message' : 'One or More Missing Field(s)!!!'}), 400
+        elif message=="fux":
+            # not succesfully added do sothg elsefields
+            return jsonify({'status' : False, 'message' : 'Operation Failed. Please Retry'})
+        else:
+            # not succesfully added do sothg elsefields
+            return jsonify({'status' : False, 'message' : 'Operation Failed. Please Retry'})
 
 def sendECharting(currentUser):
-    status, mailAdd, attachment = getLandInfo(currentUser)
+    status, mailAdd, attachment = getLandInfo()
     if status:
         # succesfully added, send mail
         msg = Message('Electronic Charting Request', sender='mysplupdates@gmail.com', recipients=['m.olabisimurit@gmail.com'])

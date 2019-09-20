@@ -8,7 +8,8 @@ db.init_app(app)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    current_mail = session.get('current_mail', None)
+    return render_template('index.html', current_mail=current_mail)
 
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
@@ -34,6 +35,7 @@ def signin():
             current_user = result["user_id"]
             current_mail = result["user_mail"]
             session["user"] = current_user
+            session["mail"] = current_mail
             return render_template('land-info.html', current_mail=current_mail)
         else:
             fail = result["message"]
@@ -41,10 +43,22 @@ def signin():
 
     return render_template('signin.html')
 
-@app.route('/land-info')
-@token_required
-def landInfo(current_user):
-    return render_template('land-info.html')
+@app.route('/land-info', methods=['GET','POST'])
+def landInfo():
+    current_mail = session.get('current_mail', None)
+    current_user = session.get('current_user', None)
+    if not current_user:
+        return redirect(url_for('signin'))
+    if request.method == "POST":
+        sendInfo = landInfoByAPI(current_user)
+        status = sendInfo["status"]
+        if status:
+            message = sendInfo["message"]
+            return render_template("requestsuccesful.html", current_mail=current_mail, message=message)
+        else:
+            message = sendInfo["message"]
+            return render_template('land-info.html', current_mail=current_mail, message=message)
+    return render_template('land-info.html', current_mail=current_mail)
 
 @app.route('/request')
 def requestQ():
@@ -113,6 +127,12 @@ def apiSignIn():
 def user_info(current_user, user_id):
     output = get_user_details(user_id)
     return output
+
+####LAND INFO#####
+@app.route('/api/landinfo', methods=['POST'])
+def apiLandInfo():
+    json_list = sendLandInfo()
+    return json_list
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

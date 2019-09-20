@@ -16,6 +16,11 @@
                     <h1>Land Information</h1>
                     <h2>This would help you ascertain the use of your land in compliance with the State Operative Development Plans.</h2>
                 </div>
+                {% if message %}
+                <div class="text-center">
+                    <p class="alert alert-danger">{{message}}</p>
+                </div>
+                {% endif %}
                 <div class="select-city">
                     <div id="form-wrapper">
                         <div class="form-wrap">

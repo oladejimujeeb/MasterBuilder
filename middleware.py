@@ -80,3 +80,36 @@ def loginByAPI():
         return json.loads(less)
         # return responsel.json()
         # return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
+
+def landInfoByAPI(currentUser):
+    try:
+        data = {
+            "siteaddress" : request.form.get('siteaddress'),
+            "eastern" : request.form.get('eastern'),
+            "western" : request.form.get('western'),
+            "email" : request.form.get('email'),
+            "select-city" : request.form.get('select-city'),
+            current_user : currentUser
+        }
+
+        url = "http://0.0.0.0:5000/api/landinfo"
+
+        headers = {
+            'content-type': 'application/json'
+        }
+
+        response = requests.post(url, headers=headers, data=json.dumps(data))
+        return (response.json())
+
+        # result = response.json()
+        # status = result["status"]
+        # if status:
+        #     # send mail
+        #     mail = data["email"]
+        #     names = data["firstname"] + " " + data["lastname"]
+        #     sender = confirm_email(mail, names)
+        #     return (sender.json())
+        # else:
+        #     return (response.json())
+    except:
+        return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
