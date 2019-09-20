@@ -268,13 +268,13 @@ footer .text-right {
     margin-left: 40px;
 }
 #select-city {
+    width: auto;
     background: #214AB1;
     border: #214AB1;
-    font-size: 20px;
+    height: 45px;
+    font-size: 16px;
     line-height: 23px;
     color: #FFF;
-    padding: 15px;
-    padding-top: 12px;
 }
 .select-city h3 {
     font-weight: bold;
