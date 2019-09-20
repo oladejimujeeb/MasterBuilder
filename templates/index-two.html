@@ -1,0 +1,39 @@
+{% extends 'layout.html' %}
+{% block title %} 
+<title> Master Builder - Better way to secure your Building Permit </title>
+{% endblock %}
+{% block body %}
+    <article>
+        <div class="container-fluid">
+        <section id="information-wrapper">
+            <h2>Information is power, so we give you power to help you through your decision phase in buying to building.</h2>
+            <div class="container" style="padding: 30px 0;">
+                <div class="row">
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-12"></div>
+                    <div class="col-lg-8 col-md-8 col-sm-12 col-12">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                <div class="card text-center">
+                                    <img src="../static/images/land-information.png" class="img-fluid" alt="Land Information">
+                                    <h3>Land Information</h3>
+                                    <p>Do you want to Verify and Acquire informations for a land you want to buy? Before you do, get informed about it’s status (is it an original survey, is the title currently in a court? You can get all you need to know to either be able to build or resell. All in just  One hour!</p>
+                                    <a class="btn btn-create" href="land-info">Proceed</a>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                                    <div class="card text-center">
+                                        <img src="../static/images/building-permit.png" class="img-fluid" alt="Building permit"><br>
+                                        <h3 class="building">Building Permit</h3>
+                                        <p>You own a verified land and infomation about it’s status and it’s time to build? We have the best system in place to help you secure your building permit legally. </p>
+                                        <a class="btn btn-create" href="building-permit">Proceed</a>
+                                    </div>         
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2 col-md-2 col-sm-12 col-12"></div>
+                </div>
+            </div>
+        </section>
+    </div>
+    </article>
+{% endblock%}
