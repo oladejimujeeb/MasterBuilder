@@ -56,5 +56,9 @@ def faq():
 def indexTwo():
     return render_template('index-two.html')
 
+@app.route('/index-three')
+def indexThree():
+    return render_template('index-three.html')
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)
