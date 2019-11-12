@@ -498,12 +498,17 @@ a:hover {
     padding-top: 10px;
     margin-top: 40px;
 }
-.submission {
+/*.submission {
     width: 40%;
     display: inline-block;
     position: relative;
     top: 65px;
     left: 10px;
+}*/
+.submission {
+    width: 85%;
+    margin: 10px auto;
+    font-size: 30px;
 }
 .success-image {
     margin-top: 40px;
