@@ -22,13 +22,18 @@
                     <div class="text-center pt-40">
                         <h1>Land Information</h1>
                     </div>
+                    {% if message %}
+                <div class="text-center">
+                    <p class="alert alert-danger">{{message}}</p>
+                </div>
+                {% endif %}
                     <div class="select-city">
                         <div id="form-wrapper">
-                            <form>
+                            <form action="/land-info" method="POST" enctype="multipart/form-data">
                                 <div class="form-wrap">
                                     <div class="form-group">
                                         <label for="select-city">SELECT CITY</label>
-                                        <select class="form-control selectcity" id="select-city">
+                                        <select class="form-control selectcity" id="select-city" name="select-city">
                                             <option value="Agege">LAGOS - AGEGE</option>
                                             <option value="Ifako-Ijaye">LAGOS - IFAKO-IJAIYE</option>
                                             <option value="Kosofe">LAGOS - KOSOFE</option>
@@ -41,23 +46,23 @@
                                     </div>
                                     <div class="form-group">
                                         <label for="siteaddress">ENTER SITE’S FULL ADDERESS</label>
-                                        <input type="text" class="form-control" id="siteaddress" required>
+                                        <input type="text" class="form-control" id="siteaddress" name="siteaddress" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="western">ENTER NORTHERN CO-ORDINATE</label>
-                                        <input type="text" class="form-control" id="western" required>
+                                        <input type="text" class="form-control" id="western" name="western" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="eastern">ENTER EASTERN CO-ORDINATE</label>
-                                        <input type="text" class="form-control" id="eastern" required>
+                                        <input type="text" class="form-control" name="eastern" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="surveyplan">UPLOAD SURVEY PLAN</label>
-                                        <input type="file" class="form-control" id="surveyplan" required>
+                                        <input type="file" class="form-control" name="surveyplan" accept="application/pdf" required>
                                     </div>
                                     <div class="form-group">
                                         <label for="email">ENTER EMAIL</label>
-                                        <input type="email" class="form-control" id="email" required>
+                                        <input type="email" class="form-control" name="email" required>
                                     </div>
                                     <div class="text-right">
                                         <p class="text-center"><span>*Ensure you have filled all required documents before charting, remember you can contact <a href="/contact" class="support">support for help</a></span></p>
