@@ -1,5 +1,6 @@
     <style>
         .building-permit {
+            margin-top: 0;
             background: url(../static/images/real_estate.png);
             background-repeat: no-repeat;
             background-size: cover;
@@ -14,15 +15,15 @@
         .btn.btn-create.btn-chart {
             margin-top: 35px;
         }
-        .building-permit h1 {
+        .land-info h1 {
             padding-top: 30px;
             font-weight: 500;
-            font-size: 71px;
+            font-size: 55px;
             line-height: 83px;
             color: #10158B;
         }
         .building-permit h2 {
-            width: 53%;
+            width: 80%;
             margin: auto;
             font-weight: 600;
             font-size: 31px;
@@ -30,11 +31,22 @@
             color: #000;
         }
         #select-city {
-            background: #C4C4C4;
-            border: #C4C4C4;
+            background: transparent;
+            margin-bottom: 10px;
+            width: 100%;
+            text-align: left;
+            line-height: 1.5; 
+            padding: .375rem .75rem;
+            padding-top: .375rem; 
+            font-size: 16px;
+        }
+        .building-permit .form-control,
+        #select-city {
+            height: 45px;
+            border: 1px solid rgba(0, 0, 0, 0.65);
             color: rgba(0, 0, 0, 0.65);
         }
-        .building-permit input {
+        .land-info input {
             width: 100%;
             border: 1px solid #000;
         }
@@ -55,14 +67,14 @@
                 line-height: 30px;
             }
             #form-wrapper {
-                width: auto;
+                width: 100%;
             }
         }
         #dropdownitem.dropdown-menu[x-placement^=bottom], .dropdown-menu[x-placement^=left], .dropdown-menu[x-placement^=right], .dropdown-menu[x-placement^=top] {
-                /*top: 90px!important;*/
+                /*top: 90px!important;
                 left: 100%!important;
         }
-        .building-permit label {
+        .land-info label {
             color: #000;
         }
     </style>

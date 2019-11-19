@@ -5,7 +5,7 @@ from models import *
 app = Flask("__name__")
 app.config.from_pyfile('config.cfg')
 db.init_app(app)
-from flask_mail import Mail, Message #as MailMessage
+from flask_mail import Mail, Message
 zmail = Mail(app)
 
 

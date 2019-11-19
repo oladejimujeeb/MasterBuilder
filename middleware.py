@@ -28,17 +28,6 @@ def registerByAPI():
 
         response = requests.post(url, headers=headers, data=json.dumps(data))
         return (response.json())
-
-        # result = response.json()
-        # status = result["status"]
-        # if status:
-        #     # send mail
-        #     mail = data["email"]
-        #     names = data["firstname"] + " " + data["lastname"]
-        #     sender = confirm_email(mail, names)
-        #     return (sender.json())
-        # else:
-        #     return (response.json())
     except:
         return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
 
@@ -59,39 +48,7 @@ def loginByAPI():
         return response.json()
     except:
         return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
-
-def auth():
-    headers = {
-            'content-type':'application/json',
-            'Authorization': basiC
-        }
-
-    #     return 0
-        # return str(request.headers["origin"])
-    #     try:
-    #         return response.json()
-    #     except:
-    #         user = User.query.filter_by(user_email=email).first()
-    #         responsel = {
-    #             'status' : True,
-    #             'message' : 'Log In Successful', 
-    #             'user_id' : user.user_id, 
-    #             'user_mail' : user.user_mail
-    #         }
-    #         return json.loads(responsel)
-    # except:
-    #     user = User.query.filter_by(user_email=email).first()
-    #     response = {
-    #         'status' : True,
-    #         'message' : 'Log In Successful', 
-    #         'user_id' : user.user_id, 
-    #         'user_mail' : user.user_email
-    #     }
-    #     less = json.dumps(response)
-    #     return json.loads(less)
-    #     # return responsel.json()
-
-
+        
 def landInfoByAPI(currentUser):
     try:
         token = session.get('maiden', None)
@@ -113,17 +70,6 @@ def landInfoByAPI(currentUser):
 
         response = requests.post(url, headers=headers, data=json.dumps(data))
         return (response.json())
-
-        # result = response.json()
-        # status = result["status"]
-        # if status:
-        #     # send mail
-        #     mail = data["email"]
-        #     names = data["firstname"] + " " + data["lastname"]
-        #     sender = confirm_email(mail, names)
-        #     return (sender.json())
-        # else:
-        #     return (response.json())
     except:
         return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
 

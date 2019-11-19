@@ -23,8 +23,6 @@ def hash_password(password):
 
 #REGISTER USER API - POST
 def register_user():
-    # pre_register()
-    # data = request.get_json()
     fields = ['lastname', 'firstname', 'phonenumber', 'email', 'password', 'surveylist']
     if not all(i in request.json for i in fields):
         return jsonify({'status' : False, 'message' : 'One or More Missing Field(s)!!!'}), 400
