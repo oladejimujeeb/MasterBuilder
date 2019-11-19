@@ -5,7 +5,8 @@ header {
     box-shadow: 0 2px 10px rgba(200, 200, 200, 0.5);
 }
 .navbar {
-    padding-bottom: 20px;
+    margin-top: -22px;
+    margin-bottom: -10px;
 }
 .container-fluid {
     width: 90%;
@@ -14,13 +15,12 @@ header {
 .navbar-dark .navbar-nav .nav-link {
     font-size: 17px;
     line-height: 23px;
-    color: #5473c3;
+    color: #214AB1;
     padding-left: 30px;
 }
 .navbar-dark .navbar-toggler {
-    color: rgba(255,255,255,.5);
-    border-color: rgba(0, 0, 0, 1);
-    background: black;
+    color: rgb(255,255,255);
+    background: #214AB1;
 }
 .navbar-dark .navbar-nav .active>.nav-link, 
 .navbar-dark .navbar-nav .nav-link.active, 
@@ -28,7 +28,7 @@ header {
 .navbar-dark .navbar-nav .show>.nav-link
 .navbar-dark .navbar-nav .nav-item.active,
 .navbar-dark .navbar-nav .nav-link:hover {
-    color: #5473c3;
+    color: #214AB1;
     font-weight: bold;
 }
 .navbar .navbar-collapse {
@@ -52,12 +52,12 @@ header {
     padding-top: 3px;
 }
 .btn.btn-primary.btn-search {
-    background: #5473C3;
+    background: #214AB1;
     border-radius: 0px 9px 9px 0px;
     margin-left: -10px;
 }
 #buildingpermit-wrapper h1 strong {
-    color: green;
+    color: #214AB1;
 }
 header h1 {
     font-weight: 500;
@@ -75,7 +75,7 @@ header h1 {
     line-height: 22px;
     color: #fff!important;
     padding: 15px 70px;
-    padding-top: 8px;
+    padding-top: 15px;
     margin-top: 60px;
 }
 #permit-wrapper {
@@ -92,7 +92,7 @@ header h1 {
     margin-top: 20px;
 }
 .btn.btn-need {
-    background: #FD4A57;
+    background: #214AB1;
     border-radius: 7px;
     border: none;
     font-weight: 500;
@@ -104,11 +104,11 @@ header h1 {
     padding-top: 8px;
 }
 .consult-div {
-    width: 60%;
     margin: 50px auto;
     text-align: center;
 }
-#permit-wrapper p {
+#permit-wrapper p,
+.role-wrapper p {
     font-weight: 500;
     font-size: 30px;
     line-height: 35px;
@@ -145,6 +145,9 @@ footer {
 }
 .mt-30 {
     margin-top: 30px;
+}
+.mt-60 {
+    margin-top: 60px;
 }
 footer h5 {
     font-weight: bold;
@@ -183,9 +186,10 @@ footer .text-right {
 .signup-wrapper {
     width: 40%;
     margin: auto;
-    margin-bottom: -25px;
+    padding-bottom: 40px;
 }
 .signup-logo {
+    height: 100px;
     margin-top: 40px;
     margin-bottom: 20px;
 }
@@ -499,12 +503,17 @@ a:hover {
     padding-top: 10px;
     margin-top: 40px;
 }
-.submission {
+/*.submission {
     width: 40%;
     display: inline-block;
     position: relative;
     top: 65px;
     left: 10px;
+}*/
+.submission {
+    width: 85%;
+    margin: 10px auto;
+    font-size: 30px;
 }
 .success-image {
     margin-top: 40px;
@@ -599,6 +608,7 @@ a:hover {
     text-align: justify;
     color: #FFF;
     padding: 15px;
+    margin-top: 30px;
 }
 .faq h5,
 .faq-class h5 {
@@ -624,4 +634,61 @@ a:hover {
 }
 .form-control:focus {
     outline: none!important;
+}
+#information-wrapper {
+    padding: 50px 0;
+}
+#information-wrapper h3 {
+    font-weight: bold;
+font-size: 25px;
+padding: 10px
+}
+.card {
+    margin-top: 15px;
+}
+#information-wrapper h2 {
+    color: #214AB1;
+    font-weight: bold;
+    font-size: 30px;
+}
+#information-wrapper p {
+    width: 94%;
+    margin: auto;
+    font-weight: 500;
+    font-size: 17px;
+    line-height: 22px;
+}
+
+/* about page */
+.about-wrapper {
+    background: url(../images/about.png);
+    background-size: cover;
+    padding: 60px 0;
+    color: #fff;
+}
+.about-wrapper h1 {
+    font-size: 60px;
+    font-weight: 900;
+    text-transform: capitalize;
+}
+.role-wrapper {
+    width: 70%;
+    margin: auto;
+    margin-top: 50px;
+}
+.role-wrapper h1,
+.team-wrapper h1 {
+    color: #214AB1;
+    margin-bottom: 20px;
+}
+
+.mt-50 {
+    margin-top: 50px;
+}
+.role-wrapper p {
+    font-size: 24px;
+}
+.team-wrapper img {
+    height: 200px;
+    margin-top: 15px;
 }

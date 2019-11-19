@@ -14,6 +14,10 @@ def home():
     current_mail = session.get('current_mail', None)
     return render_template('index.html', current_mail=current_mail)
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
 @app.route('/signup', methods=['GET', 'POST'])
 def signup():
     session.pop('current_mail', None)
@@ -129,6 +133,7 @@ def eCharting():
 def faq():
     return render_template('faq.html')
 
+
 #########################################
 ################ APIs LIST ##############
 #########################################
@@ -175,6 +180,7 @@ def apiLandInfo():
 def apiPermit():
     json_list = sendBuildPermit()
     return json_list
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True)

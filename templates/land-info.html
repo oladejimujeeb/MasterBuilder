@@ -10,16 +10,15 @@
 {% block body %}
 <!-- page specific banner -->
     <main>
-        <div>
-            <div class="row" style="margin-right: 0;">
-                <div class="col-lg-6 col-md-6">
+        
+                <!-- <div class="col-lg-6 col-md-6">
                     <section class="building-permit" data-aos="fade-down">
                         <div class="form-wrapper" style="padding: 100px 0 500px 0;">
                             <h2>This would help you ascertain the use of your land in compliance with the State Operative Development Plans.</h2>
                         </div>
                     </section>
-                </div>
-                <div class="col-lg-6 col-md-6 land-info">
+                </div> -->
+                <div style="width: 70%; margin: auto;">
                     <div class="text-center pt-40">
                         <h1>Land Information</h1>
                     </div>
@@ -65,20 +64,18 @@
                                         <label for="email">ENTER EMAIL</label>
                                         <input type="email" class="form-control" name="email" required>
                                     </div>
-                                </div>
-                                <div class="text-center">
-                                    <p><span>*Ensure you have filled all required documents before charting, remember you can contact <a href="">support for help</a></span></p>
-                                    <div>
-                                        <button class="btn btn-create btn-chart" href=""><span>E</span>nter &nbsp;<img src="../static/images/arrow.png" class="img-fluid" alt="icon"></button>
+                                    <div class="text-right">
+                                        <p class="text-center"><span>*Ensure you have filled all required documents before charting, remember you can contact <a href="/contact" class="support">support for help</a></span></p>
+                                        <div>
+                                            <a class="btn btn-create btn-chart" href="/success" style="width: 100%;">Verify</a>
+                                        </div>
                                     </div>
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <section id="howitworks" data-aos="fade-up">
+        <!-- <section id="howitworks" data-aos="fade-up">
             <div class="howitworks">
                 <div class="container-fluid">
                     <h2>How it Works</h2>
@@ -128,6 +125,6 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
     </main>
 {% endblock %}
