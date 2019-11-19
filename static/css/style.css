@@ -241,6 +241,10 @@ footer .text-right {
 .signup-wrapper section .btn-submit {
     width: 100%;
 }
+.alert.alert-success,
+.alert.alert-danger {
+    padding-bottom: 20px;
+}
 
 /* building permit page */
 .building-permit {
