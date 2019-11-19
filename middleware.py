@@ -6,15 +6,18 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 import os, warnings, requests, json, base64
 from mailings import *
 
+app.config.from_pyfile('config.cfg')
+
 # consume registration api
-def registerByAPI():
+def registerByAPI(): 
     try:
-        data = {
+        data = { 
             "lastname" : request.form.get('lastname'),
             "firstname" : request.form.get('firstname'),
             "phonenumber" : request.form.get('phonenumber'),
             "email" : request.form.get('email'),
-            "password" : request.form.get('password')
+            "password" : request.form.get('password'),
+            "surveylist" : request.form.getlist('tags')
         }
 
         url = "http://0.0.0.0:5000/api/register"
@@ -44,58 +47,68 @@ def loginByAPI():
         email = request.form.get('email')
         passkey = request.form.get('password')
         url = "http://0.0.0.0:5000/api/login"
-
         conf = email + ":" + passkey
         encodedBytes = base64.b64encode(conf.encode("utf-8"))
         encodedStr = str(encodedBytes, "utf-8")
         basiC = "Basic " + encodedStr
-
         headers = {
             'content-type':'application/json',
             'Authorization': basiC
         }
-
         response = requests.post(url, headers=headers)
-        # return str(request.headers["origin"])
-        try:
-            return response.json()
-        except:
-            user = User.query.filter_by(user_email=email).first()
-            responsel = {
-                'status' : True,
-                'message' : 'Log In Successful', 
-                'user_id' : user.user_id, 
-                'user_mail' : user.user_mail
-            }
-            return json.loads(responsel)
+        return response.json()
     except:
-        user = User.query.filter_by(user_email=email).first()
-        response = {
-            'status' : True,
-            'message' : 'Log In Successful', 
-            'user_id' : user.user_id, 
-            'user_mail' : user.user_email
+        return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
+
+def auth():
+    headers = {
+            'content-type':'application/json',
+            'Authorization': basiC
         }
-        less = json.dumps(response)
-        return json.loads(less)
-        # return responsel.json()
-        # return jsonify({'status' : False, 'message' : 'An Error Occurred'}), 400
+
+    #     return 0
+        # return str(request.headers["origin"])
+    #     try:
+    #         return response.json()
+    #     except:
+    #         user = User.query.filter_by(user_email=email).first()
+    #         responsel = {
+    #             'status' : True,
+    #             'message' : 'Log In Successful', 
+    #             'user_id' : user.user_id, 
+    #             'user_mail' : user.user_mail
+    #         }
+    #         return json.loads(responsel)
+    # except:
+    #     user = User.query.filter_by(user_email=email).first()
+    #     response = {
+    #         'status' : True,
+    #         'message' : 'Log In Successful', 
+    #         'user_id' : user.user_id, 
+    #         'user_mail' : user.user_email
+    #     }
+    #     less = json.dumps(response)
+    #     return json.loads(less)
+    #     # return responsel.json()
+
 
 def landInfoByAPI(currentUser):
     try:
+        token = session.get('maiden', None)
         data = {
             "siteaddress" : request.form.get('siteaddress'),
             "eastern" : request.form.get('eastern'),
             "western" : request.form.get('western'),
             "email" : request.form.get('email'),
-            "select-city" : request.form.get('select-city'),
+            "select-city" : request.form['select-city'],
             current_user : currentUser
         }
 
         url = "http://0.0.0.0:5000/api/landinfo"
 
         headers = {
-            'content-type': 'application/json'
+            'content-type': 'application/json',
+            'x-access-token': token
         }
 
         response = requests.post(url, headers=headers, data=json.dumps(data))

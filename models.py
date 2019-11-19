@@ -4,8 +4,18 @@ from functools import wraps
 import jwt 
 
 app = Flask("__name__")
+#app.config['SECRET_KEY'] = 'mA5TerBui13R'
+# app.config['JWT_SECRET_KEY'] = 'rand0mTEkT4Ma5tERBuil3rGenerated2TestStuffs'
 app.config.from_pyfile('config.cfg')
 db = SQLAlchemy(app)
+
+class Survey(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    survey_name =  db.Column(db.String(500), unique=True)
+    survey_frequency = db.Column(db.Integer, primary_key=False)
+
+    def __init__(self, survey_name):
+        self.survey_name = survey_name
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -77,7 +87,7 @@ class Land(db.Model):
 
     #Foreign keys
     user_id = db.Column(db.String(25), db.ForeignKey('user.user_id'), unique=False)
-
+ 
     def __init__(self, land_address, land_cordinate_north, land_cordinate_south, land_request_status, land_city, land_email):
         self.land_address = land_address
         self.land_cordinate_north = land_cordinate_north
@@ -123,8 +133,11 @@ def token_required(f):
             return jsonify({'message' : 'Token is missing!', 'status': False }), 401
         
         try:
-            data = jwt.decode(token, app.config['SECRET_KEY'])
-            current_user = User.query.filter_by(user_id=data['user_id']).first()
+            try:
+                data = jwt.decode(token, app.config.get('JWT_SECRET_KEY'))
+                current_user = User.query.filter_by(user_id=data['user_id']).first()
+            except Exception as e:
+                return e
         except:
             return jsonify({'status': False, 'message':'Token is invalid'}), 401
 
