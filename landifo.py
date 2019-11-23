@@ -4,7 +4,7 @@ from middleware import *
 import datetime
 import uuid
 from flask import Flask, request, render_template, session, logging, flash, redirect, url_for, jsonify, json
-from flask_mail import Mail, Message #as MailMessage
+from flask_mail import Mail, Message
 
 app = Flask(__name__)
 app.config.from_pyfile('config.cfg')
@@ -20,10 +20,6 @@ def landNoCall(currentUserId, uMail, uName):
         email = request.form.get('email')
         selectCity = request.form.get('select-city')
         surveyplan = request.files.get('surveyplan')
-        # hi = None
-        # if surveyplan:
-        #     hi = "YELLOW"                
-        # return "Values are " + str(siteaddress)  + ", " + str(eastern) + ", " + str(western) + ", " + str(email)+ ", " + str(selectCity) + ", filename: " + str(hi)
         #add to db
         landInfo = Land(siteaddress, eastern, western, 0, selectCity, email)
         db.session.add(landInfo)
@@ -49,17 +45,11 @@ def landNoCall(currentUserId, uMail, uName):
                 surveyplan.read())
             zmail.send(msg)
             return "sent"
-            # return jsonify({'status' : True, 'message' : 'Success. Please Check the Provided Email For Details in an Hour.'})
         except Exception as e:
             return e
-        # return "Values are " + str(siteaddress)  + ", " + str(eastern) + ", " + str(western) + ", " + str(email)+ ", " + str(selectCity) + ", filename: " + str(hi) + ", user: " + str(currentUser) + ", land:" + str(landInfo.land_id)
     except Exception as e:
         return e
 
-
-
-
-    # current_user : currentUser
 # get land info
 #GET API
 def getLandInfo(): 

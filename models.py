@@ -4,8 +4,6 @@ from functools import wraps
 import jwt 
 
 app = Flask("__name__")
-#app.config['SECRET_KEY'] = 'mA5TerBui13R'
-# app.config['JWT_SECRET_KEY'] = 'rand0mTEkT4Ma5tERBuil3rGenerated2TestStuffs'
 app.config.from_pyfile('config.cfg')
 db = SQLAlchemy(app)
 
