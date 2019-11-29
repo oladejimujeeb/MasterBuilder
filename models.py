@@ -12,8 +12,9 @@ class Survey(db.Model):
     survey_name =  db.Column(db.String(500), unique=True)
     survey_frequency = db.Column(db.Integer, primary_key=False)
 
-    def __init__(self, survey_name):
+    def __init__(self, survey_name, survey_frequency):
         self.survey_name = survey_name
+        survey_frequency = survey_frequency
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)

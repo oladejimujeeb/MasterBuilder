@@ -17,15 +17,12 @@ def registerByAPI():
             "phonenumber" : request.form.get('phonenumber'),
             "email" : request.form.get('email'),
             "password" : request.form.get('password'),
-            "surveylist" : request.form.getlist('tags')
+            "surveylist" : request.form.getlist('tags') 
         }
-
         url = "http://0.0.0.0:5000/api/register"
-
         headers = {
             'content-type': 'application/json'
         }
-
         response = requests.post(url, headers=headers, data=json.dumps(data))
         return (response.json())
     except:

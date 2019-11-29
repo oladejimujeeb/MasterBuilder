@@ -30,21 +30,22 @@ def register_user():
     password = data['password']
     hashed_password =  hash_password(password)
     try:
-        ##append survey#
-        for item in data['surveylist']:
-            oneSurvey = Survey.query.filter_by(id=int(item)).first()
-            oneSurvey.survey_frequency += 1
-            db.session.commit()
-        ##add user
         user = User(user_lastname = data['lastname'], user_firstname = data['firstname'], user_phone_number = data['phonenumber'], user_email = data['email'], user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
         db.session.add(user)
         db.session.commit()
         user_str = str(uuid.uuid4())[:6]
         user.user_id = 'user00' + str(user.id) + user_str 
         db.session.commit()
-        ###send mail to user##
-        # return jsonify({'status': True, 'message': 'Success. Please Confirm your email Address'})
-        return jsonify({'status': True, 'message': 'Registration Successful'}) 
+        for item in data['surveylist']:
+            oneSurvey = Survey.query.filter_by(survey_name=item).first()
+            if oneSurvey:
+                oneSurvey.survey_frequency += 1
+                # db.session.commit()
+            else:
+                survey = Survey(item, int(1))
+                db.session.add(survey)
+        db.session.commit()
+        return jsonify({'status': True, 'message': 'Registration Successful'})
     except exc.IntegrityError:
         return jsonify({'status' : False, 'message' : 'Email Or Phone Number Exists'}), 400
 
