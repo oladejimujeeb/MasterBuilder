@@ -4,7 +4,7 @@ from functools import wraps
 import jwt 
 
 app = Flask("__name__")
-app.config.from_pyfile('config.cfg')
+app.config.from_object('settings.py')
 db = SQLAlchemy(app)
 
 class Survey(db.Model):
