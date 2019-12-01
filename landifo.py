@@ -7,7 +7,7 @@ from flask import Flask, request, render_template, session, logging, flash, redi
 from flask_mail import Mail, Message
 
 app = Flask(__name__)
-app.config.from_object('settings.py')
+app.config.from_object('settings')
 # app.config.from_pyfile('config.cfg')
 zmail = Mail(app)
 

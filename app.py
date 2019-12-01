@@ -4,7 +4,7 @@ from models import *
 from flask_mail import Mail, Message
 
 app = Flask("__name__")
-app.config.from_object('settings.py')
+app.config.from_object('settings')
 # app.config.from_pyfile('config.cfg')
 db.init_app(app)
 zmail = Mail(app)

@@ -6,7 +6,7 @@ from flask import Flask, render_template, request, redirect, url_for, session, j
 import os, warnings, requests, json, base64
 from mailings import *
 
-app.config.from_object('settings.py')
+app.config.from_object('settings')
 # app.config.from_pyfile('config.cfg')
 
 # consume registration api
