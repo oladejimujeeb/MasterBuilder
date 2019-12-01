@@ -1,5 +1,5 @@
 import os
 
-SQLALCHEMY_DATABASE_URI = os.environment.get('DATABASE_URL')
+SQLALCHEMY_DATABASE_URI = os.environ.get('DATABASE_URL')
+SECRET_KEY = os.environ.get('SECRET_KEY')
 SQLALCHEMY_TRACK_MODIFICATIONS = True
-SECRET_KEY = os.environment.get('SECRET_KEY')
