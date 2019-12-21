@@ -7,8 +7,8 @@ from flask import Flask, request, jsonify, json
 from sqlalchemy import exc, text
 
 current_date = datetime.datetime.today()
-# app.config.from_object('settings')
-app.config.from_pyfile('config.cfg')
+app.config.from_object('settings')
+#app.config.from_pyfile('config.cfg')
 
 
 def pre_register():
