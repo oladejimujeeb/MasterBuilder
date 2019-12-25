@@ -45,7 +45,7 @@ def reg_man():
         oneSurvey = Survey.query.filter_by(survey_name=item).first()
         if oneSurvey:
             if oneSurvey.survey_frequency == None:
-                oneSurvey.survey_frequency += 1
+                oneSurvey.survey_frequency = 2
             else:
                 oneSurvey.survey_frequency += 1
             out += str(oneSurvey.survey_frequency)
