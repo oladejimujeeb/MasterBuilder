@@ -38,7 +38,7 @@ def signup():
 #             fail = result["message"]
 #             return render_template('signup.html', fail=fail)
 
-#     return render_template('signup.html')
+    return render_template('signup.html')
  
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
