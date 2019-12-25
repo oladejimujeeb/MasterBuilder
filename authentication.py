@@ -40,16 +40,22 @@ def reg_man():
     user.user_id = 'user00' + str(user.id) + user_str 
     db.session.commit()
     streak += str(user.user_id)
+    out = 0
     for item in surveylist:
         oneSurvey = Survey.query.filter_by(survey_name=item).first()
         if oneSurvey:
-            oneSurvey.survey_frequency += 1
-            streak += str(oneSurvey.survey_frequency)
+            if oneSurvey.survey_frequency == None:
+                oneSurvey.survey_frequency += 1
+            else:
+                oneSurvey.survey_frequency += 1
+            out += str(oneSurvey.survey_frequency)
             # db.session.commit()
         else:
             survey = Survey(item, int(1))
             db.session.add(survey)
+            out += str(oneSurvey.survey_frequency)
     db.session.commit()
+    streak += str(out)
     return streak
     # except exc.IntegrityError:
     #     return "error"
