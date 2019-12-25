@@ -26,7 +26,7 @@ def signup():
     session.pop('maiden', None)
     if request.method == "POST":
         result = registerByAPI()
-        return result
+        return str(result)
 #         status = result["status"]
 #         if status:
 #             response = loginByAPI()
