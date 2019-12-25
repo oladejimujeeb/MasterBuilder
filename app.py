@@ -25,7 +25,8 @@ def signup():
     session.pop('current_mail', None)
     session.pop('maiden', None)
     if request.method == "POST":
-        result = registerByAPI()
+        result = reg_man()
+        #result = registerByAPI()
         return str(result)
 #         status = result["status"]
 #         if status:

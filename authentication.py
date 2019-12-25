@@ -22,6 +22,16 @@ def hash_password(password):
     cpassword = generate_password_hash(password, method='sha256')
     return cpassword
 
+###
+def reg_man():
+    lastname = request.form.get('lastname')
+    firstname = request.form.get('firstname')
+    phonenumber = request.form.get('phonenumber')
+    email = request.form.get('email')
+    password = request.form.get('password')
+    surveylist = request.form.getlist('tags')
+    return lastname + ', ' + firstname + ', ' + str(surveylist)
+    
 #REGISTER USER API - POST
 def register_user():
     fields = ['lastname', 'firstname', 'phonenumber', 'email', 'password', 'surveylist']
@@ -30,25 +40,28 @@ def register_user():
     data = request.get_json()
     password = data['password']
     hashed_password =  hash_password(password)
-    try:
-        user = User(user_lastname = data['lastname'], user_firstname = data['firstname'], user_phone_number = data['phonenumber'], user_email = data['email'], user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
-        db.session.add(user)
-        db.session.commit()
-        user_str = str(uuid.uuid4())[:6]
-        user.user_id = 'user00' + str(user.id) + user_str 
-        db.session.commit()
-        for item in data['surveylist']:
-            oneSurvey = Survey.query.filter_by(survey_name=item).first()
-            if oneSurvey:
-                oneSurvey.survey_frequency += 1
-                # db.session.commit()
-            else:
-                survey = Survey(item, int(1))
-                db.session.add(survey)
-        db.session.commit()
-        return jsonify({'status': True, 'message': 'Registration Successful'})
-    except exc.IntegrityError:
-        return jsonify({'status' : False, 'message' : 'Email Or Phone Number Exists'}), 400
+    name = data['lastname'] + ', ' + 'firstname'
+    choice = data['surveylist']
+    return jsonify({'name': name, 'Choice List': choice})
+    # try:
+    #     user = User(user_lastname = data['lastname'], user_firstname = data['firstname'], user_phone_number = data['phonenumber'], user_email = data['email'], user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
+    #     db.session.add(user)
+    #     db.session.commit()
+    #     user_str = str(uuid.uuid4())[:6]
+    #     user.user_id = 'user00' + str(user.id) + user_str 
+    #     db.session.commit()
+    #     for item in data['surveylist']:
+    #         oneSurvey = Survey.query.filter_by(survey_name=item).first()
+    #         if oneSurvey:
+    #             oneSurvey.survey_frequency += 1
+    #             # db.session.commit()
+    #         else:
+    #             survey = Survey(item, int(1))
+    #             db.session.add(survey)
+    #     db.session.commit()
+    #     return jsonify({'status': True, 'message': 'Registration Successful'})
+    # except exc.IntegrityError:
+    #     return jsonify({'status' : False, 'message' : 'Email Or Phone Number Exists'}), 400
 
 #LOG IN USER API - POST 
 
