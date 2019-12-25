@@ -30,21 +30,43 @@ def reg_man():
     email = request.form.get('email')
     password = request.form.get('password')
     surveylist = request.form.getlist('tags')
-    return lastname + ', ' + firstname + ', ' + str(surveylist)
-    
-#REGISTER USER API - POST
-def register_user():
-    fields = ['lastname', 'firstname', 'phonenumber', 'email', 'password', 'surveylist']
-    if not all(i in request.json for i in fields):
-        return jsonify({'status' : False, 'message' : 'One or More Missing Field(s)!!!'}), 400
-    data = request.get_json()
-    password = data['password']
     hashed_password =  hash_password(password)
-    name = data['lastname'] + ', ' + 'firstname'
-    choice = data['surveylist']
-    return jsonify({'name': name, 'Choice List': choice})
     # try:
-    #     user = User(user_lastname = data['lastname'], user_firstname = data['firstname'], user_phone_number = data['phonenumber'], user_email = data['email'], user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
+    streak = ""
+    user = User(user_lastname = lastname, user_firstname = firstname, user_phone_number = phonenumber, user_email = email, user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
+    db.session.add(user)
+    db.session.commit()
+    user_str = str(uuid.uuid4())[:6]
+    user.user_id = 'user00' + str(user.id) + user_str 
+    db.session.commit()
+    streak += str(user.user_id)
+    for item in surveylist:
+        oneSurvey = Survey.query.filter_by(survey_name=item).first()
+        if oneSurvey:
+            oneSurvey.survey_frequency += 1
+            streak += str(oneSurvey.survey_frequency)
+            # db.session.commit()
+        else:
+            survey = Survey(item, int(1))
+            db.session.add(survey)
+    db.session.commit()
+    return streak
+    # except exc.IntegrityError:
+    #     return "error"
+
+# #REGISTER USER API - POST
+# def register_user():
+#     fields = ['lastname', 'firstname', 'phonenumber', 'email', 'password', 'surveylist']
+#     if not all(i in request.json for i in fields):
+#         return jsonify({'status' : False, 'message' : 'One or More Missing Field(s)!!!'}), 400
+#     data = request.get_json()
+#     password = data['password']
+#     hashed_password =  hash_password(password)
+#     name = data['lastname'] + ', ' + 'firstname'
+#     choice = data['surveylist']
+#     return jsonify({'name': name, 'Choice List': choice})
+#     # try:
+#     #     user = User(user_lastname = data['lastname'], user_firstname = data['firstname'], user_phone_number = data['phonenumber'], user_email = data['email'], user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
     #     db.session.add(user)
     #     db.session.commit()
     #     user_str = str(uuid.uuid4())[:6]
