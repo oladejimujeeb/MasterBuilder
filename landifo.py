@@ -14,46 +14,46 @@ zmail = Mail(app)
 current_date = datetime.datetime.today()
 
 def landNoCall(currentUserId, uMail, uName):
-    try:
-        siteaddress = request.form.get('siteaddress')
-        eastern = request.form.get('eastern')
-        western = request.form.get('western')
-        email = request.form.get('email')
-        selectCity = request.form.get('select-city')
-        surveyplan = request.files.get('surveyplan')
-        #add to db
-        landInfo = Land(siteaddress, eastern, western, 0, selectCity, email)
-        db.session.add(landInfo)
-        db.session.commit()
-        land_str = str(uuid.uuid4())[:6]
-        landInfo.land_id = 'land10' + str(landInfo.id) + land_str 
-        landInfo.user_id = currentUserId
-        db.session.commit()
-        streak = landInfo.land_id
-        #username and email
-        # try:
-            #send mail
-        subject = 'Land Information Request'
-        rec1 = 'm.olabisimurit@gmail.com'
-        rec2 = 'hiphyhisaac@gmail.com'
-        msg = Message(subject, recipients=[rec1, rec2])
-        streak += ", About to send Mail. Subject: " + subject
-        msg.html = "Hi, <br><br> A Request Has Been Made For Land Information From <b>" + uName + "</b>, with registered email address <b>" +uMail + "</b>. <br> \
-                The details are as given. <br><p style='text-align:left'>City: <b>" + selectCity + "<b><br> Site Address: <b>" + siteaddress + "</b><br> Northern Coordinate: \
-                    <b>" + western  + "</b><br> Eastern Coordinate: <b>" + eastern + "</b><br> Provided Email: <b>" + email + "</b></p><br><br> \
-                    Kindly, Find Attached The Survey Plan. <br><br>Cheers."
-        msg.attach(
-            surveyplan.filename,
-            'application/octect-stream',
-            surveyplan.read())
-        streak += ". Attaching attachments. About to send."
-        zmail.send(msg)
-        # return "sent"
-        return streak
+    # try:
+    siteaddress = request.form.get('siteaddress')
+    eastern = request.form.get('eastern')
+    western = request.form.get('western')
+    email = request.form.get('email')
+    selectCity = request.form.get('select-city')
+    surveyplan = request.files.get('surveyplan')
+    #add to db
+    landInfo = Land(siteaddress, eastern, western, 0, selectCity, email)
+    db.session.add(landInfo)
+    db.session.commit()
+    land_str = str(uuid.uuid4())[:6]
+    landInfo.land_id = 'land10' + str(landInfo.id) + land_str 
+    landInfo.user_id = currentUserId
+    db.session.commit()
+    streak = landInfo.land_id
+    #username and email
+    # try:
+        #send mail
+    subject = 'Land Information Request'
+    rec1 = 'm.olabisimurit@gmail.com'
+    rec2 = 'hiphyhisaac@gmail.com'
+    msg = Message(subject, recipients=[rec1, rec2])
+    streak += ", About to send Mail. Subject: " + subject
+    msg.html = "Hi, <br><br> A Request Has Been Made For Land Information From <b>" + uName + "</b>, with registered email address <b>" +uMail + "</b>. <br> \
+            The details are as given. <br><p style='text-align:left'>City: <b>" + selectCity + "<b><br> Site Address: <b>" + siteaddress + "</b><br> Northern Coordinate: \
+                <b>" + western  + "</b><br> Eastern Coordinate: <b>" + eastern + "</b><br> Provided Email: <b>" + email + "</b></p><br><br> \
+                Kindly, Find Attached The Survey Plan. <br><br>Cheers."
+    msg.attach(
+        surveyplan.filename,
+        'application/octect-stream',
+        surveyplan.read())
+    streak += ". Attaching attachments. About to send."
+    zmail.send(msg)
+    # return "sent"
+    return streak
         # except Exception as e:
         #     return e
-    except Exception as e:
-        return e
+    # except Exception as e:
+    #     return e
 
 # get land info
 #GET API
