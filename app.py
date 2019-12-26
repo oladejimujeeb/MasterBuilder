@@ -27,7 +27,7 @@ def signup():
     if request.method == "POST":
         status = reg_man()
         if status == "error":
-            fail = result["message"]
+            fail = "Email Or Phone Number Exists"
             return render_template('signup.html', fail=fail)
 
 #       if status:
