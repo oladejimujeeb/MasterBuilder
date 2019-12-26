@@ -29,16 +29,13 @@ def signup():
         if status == "error":
             fail = "Email Or Phone Number Exists"
             return render_template('signup.html', fail=fail)
-
-#       if status:
-#           response = loginByAPI()
-#           session['maiden'] = response["token"]
-#           current_mail = request.form.get('email')
-#           session['current_mail'] = current_mail
-#           return render_template('land-info.html', current_mail=current_mail)
-#       else:
-#           fail = result["message"]
-#           return render_template('signup.html', fail=fail)
+        else:
+            response = loginByAPI()
+            current_mail = status
+            session['current_mail'] = current_mail
+            session['token'] = "maiden4all09567u22manvu899rn"
+            session['maiden'] = response["token"]
+            return render_template('land-info.html', current_mail=current_mail)
     return render_template('signup.html')
  
 @app.route('/signin', methods=['GET', 'POST'])

@@ -50,10 +50,8 @@ def reg_man():
                 db.session.add(survey)
         db.session.commit()
         return user.user_email
-        # return jsonify({'status': True, 'message': 'Registration Successful'})
     except exc.IntegrityError:
         return "error"
-        # return jsonify({'status' : False, 'message' : 'Email Or Phone Number Exists'}), 400
 
 # #REGISTER USER API - POST
 # def register_user():
