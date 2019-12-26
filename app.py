@@ -27,7 +27,7 @@ def signup():
     if request.method == "POST":
         result = reg_man()
         #status = result[0]
-        return str(result)
+        return result
 #       if status:
 #           response = loginByAPI()
 #           session['maiden'] = response["token"]
