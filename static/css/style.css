@@ -696,7 +696,8 @@ padding: 10px
     font-size: 24px;
 }
 .team-wrapper img {
-    height: 200px;
+    height: 250px;
+    width: 250px;
     margin-top: 15px;
 }
 .team-wrapper .d-flex {
