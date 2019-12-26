@@ -47,7 +47,7 @@ def reg_man():
                     oneSurvey.survey_frequency = 2
                 else:
                     oneSurvey.survey_frequency += 1
-                out += oneSurvey.survey_frequency
+                # out += oneSurvey.survey_frequency
                 # db.session.commit()
             else:
                 survey = Survey(item, int(1))
