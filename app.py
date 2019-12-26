@@ -25,9 +25,11 @@ def signup():
     session.pop('current_mail', None)
     session.pop('maiden', None)
     if request.method == "POST":
-        result = reg_man()
-        #status = result[0]
-        return result
+        status = reg_man()
+        if status == "error":
+            fail = result["message"]
+            return render_template('signup.html', fail=fail)
+
 #       if status:
 #           response = loginByAPI()
 #           session['maiden'] = response["token"]
