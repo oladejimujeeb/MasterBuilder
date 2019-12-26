@@ -31,34 +31,34 @@ def reg_man():
     password = request.form.get('password')
     surveylist = request.form.getlist('tags')
     hashed_password =  hash_password(password)
-    # try:
-    streak = ""
-    user = User(user_lastname = lastname, user_firstname = firstname, user_phone_number = phonenumber, user_email = email, user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
-    db.session.add(user)
-    db.session.commit()
-    user_str = str(uuid.uuid4())[:6]
-    user.user_id = 'user00' + str(user.id) + user_str 
-    db.session.commit()
-    streak += str(user.user_id)
-    out = 0
-    for item in surveylist:
-        oneSurvey = Survey.query.filter_by(survey_name=item).first()
-        if oneSurvey:
-            if oneSurvey.survey_frequency == None:
-                oneSurvey.survey_frequency = 2
+    try:
+        user = User(user_lastname = lastname, user_firstname = firstname, user_phone_number = phonenumber, user_email = email, user_password = hashed_password, user_confirm=0, user_admin=0, user_status=0)
+        db.session.add(user)
+        db.session.commit()
+        user_str = str(uuid.uuid4())[:6]
+        user.user_id = 'user00' + str(user.id) + user_str 
+        db.session.commit()
+        # streak += str(user.user_id)
+        # out = 0
+        for item in surveylist:
+            oneSurvey = Survey.query.filter_by(survey_name=item).first()
+            if oneSurvey:
+                if oneSurvey.survey_frequency == None:
+                    oneSurvey.survey_frequency = 2
+                else:
+                    oneSurvey.survey_frequency += 1
+                out += oneSurvey.survey_frequency
+                # db.session.commit()
             else:
-                oneSurvey.survey_frequency += 1
-            out += oneSurvey.survey_frequency
-            # db.session.commit()
-        else:
-            survey = Survey(item, int(1))
-            db.session.add(survey)
-            out += oneSurvey.survey_frequency
-    db.session.commit()
-    streak += str(out)
-    return streak
-    # except exc.IntegrityError:
-    #     return "error"
+                survey = Survey(item, int(1))
+                db.session.add(survey)
+                # out += oneSurvey.survey_frequency
+        db.session.commit()
+        #streak += str(out)
+        #return streak
+        return jsonify({'status': True, 'message': 'Registration Successful'})
+    except exc.IntegrityError:
+        return jsonify({'status' : False, 'message' : 'Email Or Phone Number Exists'}), 400
 
 # #REGISTER USER API - POST
 # def register_user():

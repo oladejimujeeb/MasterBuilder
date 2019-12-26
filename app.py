@@ -26,20 +26,18 @@ def signup():
     session.pop('maiden', None)
     if request.method == "POST":
         result = reg_man()
-        #result = registerByAPI()
-        return str(result)
-#         status = result["status"]
-#         if status:
-#             response = loginByAPI()
-#             session['maiden'] = response["token"]
-#             current_mail = request.form.get('email')
-#             session['current_mail'] = current_mail
-#             return render_template('land-info.html', current_mail=current_mail)
-#         else:
-#             fail = result["message"]
-#             return render_template('signup.html', fail=fail)
-
-    return render_template('signup.html')
+        status = result["status"]
+        return str(status)
+#       if status:
+#           response = loginByAPI()
+#           session['maiden'] = response["token"]
+#           current_mail = request.form.get('email')
+#           session['current_mail'] = current_mail
+#           return render_template('land-info.html', current_mail=current_mail)
+#       else:
+#           fail = result["message"]
+#           return render_template('signup.html', fail=fail)
+    # return render_template('signup.html')
  
 @app.route('/signin', methods=['GET', 'POST'])
 def signin():
