@@ -70,13 +70,13 @@ def landInfoPost():
         current_name = currentUser.user_firstname + " " + currentUser.user_lastname
         try:
             result = landNoCall(currentUserId, current_mail, current_name)
-            return result
-            # if str(result) == "sent":
-            #     message = "Success. Please Check the Provided Email For Details in an Hour."
-            #     return render_template("requestsuccessful.html",  message=message, current_mail=current_mail)
-            # else:
-            #     message = "An Error Occured. Please Try Again."
-            #     return render_template('land-info.html', current_mail=current_mail, message=message)
+            # return result
+            if str(result) == "sent":
+                message = "Success. Please Check the Provided Email For Details in an Hour."
+                return render_template("requestsuccessful.html",  message=message, current_mail=current_mail)
+            else:
+                message = "An Error Occured. Please Try Again."
+                return render_template('land-info.html', current_mail=current_mail, message=message)
         except Exception as e:
             return e
 
