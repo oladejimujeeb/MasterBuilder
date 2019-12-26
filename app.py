@@ -30,11 +30,9 @@ def signup():
             fail = "Email Or Phone Number Exists"
             return render_template('signup.html', fail=fail)
         else:
-            response = loginByAPI()
             current_mail = status
             session['current_mail'] = current_mail
             session['token'] = "maiden4all09567u22manvu899rn"
-            session['maiden'] = response["token"]
             return render_template('land-info.html', current_mail=current_mail)
     return render_template('signup.html')
  
@@ -43,19 +41,15 @@ def signin():
     session.pop('current_mail', None)
     session.pop('maiden', None)
     if request.method == "POST":
-        result = loginByAPI()
-        return result
-        # status = result["status"]
-        # if status is True:
-        #     current_mail = request.form.get('email')
-        #     session['current_mail'] = current_mail
-        #     session['token'] = "maiden4all09567u22manvu899rn"
-        #     session['maiden'] = result["token"]
-        #     return render_template('land-info.html', current_mail=current_mail)
-        # else:
-        #     fail = result["message"]
-        #     return render_template('signin.html', fail=fail)
-
+        status, emailA = log_man()
+        if status:
+            current_mail = emailA
+            session['current_mail'] = current_mail
+            session['token'] = "maiden4all09567u22manvu899rn"
+            return render_template('land-info.html', current_mail=current_mail)        
+        else:
+            fail = "Could not verify. Email Address or Password Incorrect"
+            return render_template('signin.html', fail=fail)
     return render_template('signin.html')
 
 @app.route('/land-info', methods=['GET'])

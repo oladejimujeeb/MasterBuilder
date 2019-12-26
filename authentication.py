@@ -53,6 +53,19 @@ def reg_man():
     except exc.IntegrityError:
         return "error"
 
+##
+def log_man():
+    email = request.form.get('email')
+    passkey = request.form.get('password')
+    user = User.query.filter_by(user_email=email).first()
+    if not user:
+        return False, email
+    if check_password_hash(user.user_password, passkey):
+        return True, email
+    else:
+        return False, email
+
+
 # #REGISTER USER API - POST
 # def register_user():
 #     fields = ['lastname', 'firstname', 'phonenumber', 'email', 'password', 'surveylist']
