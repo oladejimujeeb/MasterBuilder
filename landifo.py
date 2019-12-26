@@ -47,7 +47,7 @@ def landNoCall(currentUserId, uMail, uName):
             'application/octect-stream',
             surveyplan.read())
         streak += ". Attaching attachments. About to send."
-        #zmail.send(msg)
+        zmail.send(msg)
         # return "sent"
         return streak
         # except Exception as e:
