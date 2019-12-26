@@ -36,7 +36,7 @@ def landNoCall(currentUserId, uMail, uName):
             rec1 = 'm.olabisimurit@gmail.com'
             rec2 = 'hiphyhisaac@gmail.com'
             msg = Message(subject, recipients=[rec1, rec2])
-            streak += ", About to send Mail. Subject: " + subject
+            # streak += ", About to send Mail. Subject: " + subject
             msg.html = "Hi, <br><br> A Request Has Been Made For Land Information From <b>" + uName + "</b>, with registered email address <b>" +uMail + "</b>. <br> \
                     The details are as given. <br><p style='text-align:left'>City: <b>" + selectCity + "<b><br> Site Address: <b>" + siteaddress + "</b><br> Northern Coordinate: \
                         <b>" + western  + "</b><br> Eastern Coordinate: <b>" + eastern + "</b><br> Provided Email: <b>" + email + "</b></p><br><br> \
@@ -45,7 +45,7 @@ def landNoCall(currentUserId, uMail, uName):
                 surveyplan.filename,
                 'application/octect-stream',
                 surveyplan.read())
-            streak += ". Attaching attachments. About to send."
+            # streak += ". Attaching attachments. About to send."
             zmail.send(msg)
             return "sent"
             # return streak
